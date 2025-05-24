@@ -1,0 +1,8 @@
+{
+  "label": "地图画生成",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "地图画生成"
+  }
+}
