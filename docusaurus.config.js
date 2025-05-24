@@ -102,7 +102,7 @@ const config = {
             items: [
               {
                 label: 'SenCraftWiki',
-                to: '/docs/intro',
+                to: '/docs/wiki',
               },
             ],
           },
