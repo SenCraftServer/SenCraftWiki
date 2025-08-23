@@ -8,7 +8,7 @@ sidebar_position: 9
 :::
 # MetaBrushes
 
-> Brushes in [FastAsyncVoxelSniper](./1.Start.md) and most versions of VoxelSniper are generally broken up into 2 primary categories, Regular Brushes or Performer Brushes. **A Regular Brush is one that does not accept performers** such as VoxelSniper's Erode, HeatRay, or Dome brushes. **A Performer Brush is one that uses performers that can be changed to alter the operation of the brush**, such as Ball, Overlay, or FillDown brushes. **MetaBrushes adds a 3rd category called MetaBrushes**, which are an extension of performer brushes, but utilize an additional algorithm performed at the end of each brush to either smooth the output or adapt it to nearby blocks.
+> Brushes in [FastAsyncVoxelSniper](./Start.md) and most versions of VoxelSniper are generally broken up into 2 primary categories, Regular Brushes or Performer Brushes. **A Regular Brush is one that does not accept performers** such as VoxelSniper's Erode, HeatRay, or Dome brushes. **A Performer Brush is one that uses performers that can be changed to alter the operation of the brush**, such as Ball, Overlay, or FillDown brushes. **MetaBrushes adds a 3rd category called MetaBrushes**, which are an extension of performer brushes, but utilize an additional algorithm performed at the end of each brush to either smooth the output or adapt it to nearby blocks.
 
 每个被归类为 MetaBrush 类型的笔刷都会以某种方式使用这些参数。每个参数的默认值及其说明如下：
 
