@@ -12,15 +12,15 @@ VS 指定
 
 > [基本笔刷](brush.md)
 >
-> [Voxel Sniper 指令](commands.md)
+> [Voxel Sniper 指令](Commands.md)
 >
-> [功能笔刷](tool-brushes.md)
+> [功能笔刷](Tool-brushes.md)
 >
 > [开发中的笔刷](Brushes-and-Features-in-Development.md)
 >
-> [模板笔刷](Stencil-brush.md)
+> [模板笔刷](Stencil-Brush.md)
 >
-> [实体笔刷](Entity-brushes.md)
+> [实体笔刷](Entity-Brushes.md)
 >
 > [自然环境笔刷](Environment-brushes.md) 
 >
