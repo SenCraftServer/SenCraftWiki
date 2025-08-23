@@ -10,18 +10,18 @@ VS 指定
 和
 [**火药**](https://zh.minecraft.wiki/w/%E7%81%AB%E8%8D%AF) 作为操作工具，使用指令切换笔刷、样式等设置。
 
-> [基本笔刷](brush)
+> [基本笔刷](brush.md)
 >
-> [Voxel Sniper 指令](commands)
+> [Voxel Sniper 指令](commands.md)
 >
-> [功能笔刷](tool-brushes)
+> [功能笔刷](tool-brushes.md)
 >
-> [开发中的笔刷](brushes-and-features-in-development)
+> [开发中的笔刷](Brushes-and-Features-in-Development.md)
 >
-> [模板笔刷](stencil-brush.md)
+> [模板笔刷](Stencil-brush.md)
 >
-> [实体笔刷](entity-brushes)
+> [实体笔刷](Entity-brushes.md)
 >
-> [自然环境笔刷](environment-brushes) 
+> [自然环境笔刷](Environment-brushes.md) 
 >
-> [MetaBrushes](metabrushes)
+> [MetaBrushes](metabrushes.md)
