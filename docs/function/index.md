@@ -7,8 +7,10 @@ sidebar_position: 1
 
 包括但不限于：
 - [快速调音](Tuna/index.md)
+- [地图画生成](Imgmap/index.md)
 
-:::danger 注意
+:::danger[注意]   
+
 
 由于服务器内的功能过多，本文档无法完全列举出全部功能，具体请前往服务器内探索....
 

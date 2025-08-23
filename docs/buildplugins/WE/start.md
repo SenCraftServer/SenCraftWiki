@@ -65,5 +65,6 @@ sidebar_position: 1
 > [**变换**](transforms) 
 
 > [**笔刷**](brushes) 
-## 服务器菜单中的WorldEdit Wiki
+:::tip
+ 服务器菜单中的WorldEdit Wiki
 在服务器菜单（`/bs`）中，也有WorldEdit Wiki，位置为菜单的左下角（感谢`zishu123`老师的Wiki！！！）
