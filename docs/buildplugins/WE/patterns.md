@@ -34,7 +34,7 @@ sidebar_position: 4
 | `#clipboard`                                     | 使用剪贴板中的方块作为图案                                                               | `#clipboard`                      |
 | `#existing`                                      | 使用已经存在的方块                                                                       | `#existing`                       |
 | `#biome <biome>`                                 | 设置生物群系                                                                             | `#biome[desert]`                  |
-| `= <expression>`                                 | 表达式图案: [表达式语法](./14.expressions.md)          | `=height(x, y, z)`                |
+| `= <expression>`                                 | 表达式图案: [表达式语法](./expressions.md)          | `=height(x, y, z)`                |
 | `#relative <pattern>`                            | 将图案偏移到点击的位置                                                                   | `#relative[minecraft:stone]`              |
 | `#saturate <r> <g> <b>`                          | 用颜色饱和现有方块                                                                       | `#saturate[255][0][0]`            |
 | `#darken`                                        | 使现有方块变暗                                                                           | `#darken`                         |
