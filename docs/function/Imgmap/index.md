@@ -22,10 +22,10 @@ sidebar_position: 1
 - **`<抖动算法选项>`：** `-dither` 输入则使用该算法，默认不使用
 - **`<保持比例选项>`：** `-keepscale` 输入则使用该算法，默认不使用
 - **`<打包选项>`：** `-pack` `<打包方式>`
-  - **`<打包方式>`：**
-    1. `normal`（直接放入背包）
-    2. `compressed`（存储于压缩画中）
-    3. `shulker`（存储于潜影盒中）
+- **`<打包方式>`：**
+  1. `normal`（直接放入背包）
+  2. `compressed`（存储于压缩画中）
+  3. `shulker`（存储于潜影盒中）
 
 **样例：** `/getimage -url https://i.imgs.ovh/2025/08/23/GxYxd.jpeg -l 2 -w 2 -keepscale` `-pack` `compressed`
 
