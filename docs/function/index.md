@@ -8,9 +8,7 @@ sidebar_position: 1
 包括但不限于：
 - [快速调音](Tuna/index.md)
 - [地图画生成器](Imgmap/index.md)
-- [盔甲架制作](ArmorStand/index.md)
-- [世界管理](WorldManager/index.md)
-- [口袋游戏](Geimu/index.md)
+
 :::danger[注意]   
 
 
