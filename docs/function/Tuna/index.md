@@ -12,6 +12,7 @@ sidebar_position: 1
 - 通过外部GUI改变音符盒乐器
 - 滚轮调音
 - 支持 [BlockTuner Mod](https://github.com/Lumine1909/BlockTunerMod_Continue)
+
 ## 用法
 
 ### 命令
@@ -23,6 +24,8 @@ sidebar_position: 1
 | `/tune`                | 对所对准的音符盒进行调音       |
 | `/tunehand`            | 对手持音符盒进行调音  |
 | `/tunestick`           | 获取调音棒 (左/右键点击) |
+
+
 
 ### GUI演示
 

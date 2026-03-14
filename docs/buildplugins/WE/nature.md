@@ -1,7 +1,9 @@
 ---
 sidebar_position: 10
 ---
+
 # 环境处理
+
 ## Drain
 
 此命令从球形区域中移除水（图片 1）。
@@ -19,7 +21,7 @@ sidebar_position: 10
 
 ### 用法
 
-`//drain <radius> [-w] [-p]`
+`//drain \<radius> [-w] [-p]`
 
 ### 权限
 
@@ -29,11 +31,11 @@ sidebar_position: 10
 
 1.  ![drain.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/wnjgiXJ.6hnw810ng880.png)
 
-2.  ![drain\_resource.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/YTGLAqx.2hzkwwgzj5e0.png)
+1.  ![drain\_resource.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/YTGLAqx.2hzkwwgzj5e0.png)
 
-3.  ![drain-w.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/mf5arBW.4bh7b5xxxuo0.png)
+1.  ![drain-w.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/mf5arBW.4bh7b5xxxuo0.png)
 
-4.  ![drain-p.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/r1NAWsr.5zat2utiw280.png)
+1.  ![drain-p.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/r1NAWsr.5zat2utiw280.png)
 
 ## Fixwater
 
@@ -47,7 +49,7 @@ sidebar_position: 10
 
 ### 用法
 
-`//fixwater <radius>`
+`//fixwater \<radius\>`
 
 ### 权限
 
@@ -57,9 +59,9 @@ sidebar_position: 10
 
 1.  ![fixwater.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/eaFTnG0.7lacco92xqw0.png)
 
-2.  ![fixwater-full.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/Krav8oA.2zgv495k9vs0.png)
-3.  
-4.  ![fixwater\_resource.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/FBuYNm4.22n3kubkufts.png)
+1.  ![fixwater-full.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/Krav8oA.2zgv495k9vs0.png)
+3.
+1.  ![fixwater\_resource.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/FBuYNm4.22n3kubkufts.png)
 
 ## Fixlava
 
@@ -73,7 +75,7 @@ sidebar_position: 10
 
 ### 用法
 
-`//fixlava <radius>`
+`//fixlava \<radius\>`
 
 ### 权限
 
@@ -83,9 +85,9 @@ sidebar_position: 10
 
 1.  ![fixlava.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/wbA3QsB.mej9vkcdteo.jpg)
 
-2.  ![fixlava-full.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/0zhsjLL.562x06bjnro0.jpg)
+1.  ![fixlava-full.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/0zhsjLL.562x06bjnro0.jpg)
 
-3.  ![fixlava\_resource.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/zmaFyy7.1ihf3xpmbu9s.jpg)
+1.  ![fixlava\_resource.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/zmaFyy7.1ihf3xpmbu9s.jpg)
 
 ## Snow
 

@@ -1,9 +1,8 @@
 ---
 sidebar_position: 2
 ---
-# 选区
 
-::alert
+# 选区
 
 一些FAWE命令需要选择一个区域才能生效。该命令允许您修改或删除当前的选择。`selection-type`参数用于更改所选区域，无论是扩大选择还是更改其形状。
 ::
@@ -11,8 +10,6 @@ sidebar_position: 2
 > **用法：** `//sel [selection-type]`
 
 > **别名：** `deselect` , `desel` , `/;`
-
-
 
 ## 选择类型
 
@@ -81,7 +78,7 @@ FAWE工具项通过`//wand`命令获得。
 
 ### Pos
 
-定义选择角的另一种方法是使用`//pos`命令。如果未指定参数，则位置将设置为您所在的坐标（图片所示）。或者，您可以使用`coordinates`参数明确定义坐标。该参数遵循此语法：`<X>,<Y>,<Z>`。对于所有三个坐标，可以使用一个值。
+定义选择角的另一种方法是使用`//pos`命令。如果未指定参数，则位置将设置为您所在的坐标（图片所示）。或者，您可以使用`coordinates`参数明确定义坐标。该参数遵循此语法：`\<X\>,\<Y\>,\<Z\>`。对于所有三个坐标，可以使用一个值。
 
 **用法：** `//pos1 [coordinates]` 和 `//pos2 [coordinates]`
 
@@ -124,8 +121,8 @@ FAWE工具项通过`//wand`命令获得。
 
 次要：
 
-- `//chunk <x,z block coordinates>`
-- `//chunk <x,z chunk coordinates> -c`
+- `//chunk \<x,z block coordinates\>`
+- `//chunk \<x,z chunk coordinates> -c`
 - `//chunk -s`
 
 **权限：** `worldedit.selection.chunk`
@@ -142,11 +139,11 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//shift <amount>`
+`//shift \<amount\>`
 
 次要：
 
-`//shift <amount> <direction>`
+`//shift \<amount> \<direction\>`
 
 **示例：**
 
@@ -167,12 +164,12 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//inset <amount>`
+`//inset \<amount\>`
 
 次要：
 
-- `//inset <amount> -h`
-- `//inset <amount> -v`
+- `//inset \<amount> -h`
+- `//inset \<amount> -v`
 
 **示例：**
 
@@ -191,12 +188,12 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//outset <amount>`
+`//outset \<amount\>`
 
 次要：
 
-- `//outset <amount> -h`
-- `//outset <amount> -v`
+- `//outset \<amount> -h`
+- `//outset \<amount> -v`
 
 **示例：**
 
@@ -214,13 +211,13 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//contract <amount>`
+`//contract \<amount\>`
 
 次要：
 
-- `//contract <amount> <direction>`
-- `//contract <amount> <reverse-amount>`
-- `//contract <amount> <reverse-amount> <direction>`
+- `//contract \<amount> \<direction\>`
+- `//contract \<amount> \<reverse-amount\>`
+- `//contract \<amount> \<reverse-amount> \<direction\>`
 
 **示例：**
 
@@ -239,13 +236,13 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//expand <amount>`
+`//expand \<amount\>`
 
 次要：
 
-- `//expand <amount> <direction>`
-- `//expand <amount> <reverse-amount>`
-- `//expand <amount> <reverse-amount> <direction>`
+- `//expand \<amount> \<direction\>`
+- `//expand \<amount> \<reverse-amount\>`
+- `//expand \<amount> \<reverse-amount> \<direction\>`
 - `//expand vert`
 
 **示例：**

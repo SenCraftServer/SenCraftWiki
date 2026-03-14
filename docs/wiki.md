@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 # SenCraft官方WIKI
@@ -10,8 +10,9 @@ SenCraft是一款由服主 **sensen1234** 创建的公益Minecraft创造服
 b站相关视频总播放数达到**50w+**
 
 - 我们承诺: **服务器永远不会更换周目，永远不会成为商业服**
- 
+
 ## 相关信息
+
 **IP:** `mc.sencraft.top`
 
 **官网：** `https://www.sencraft.top`
@@ -45,6 +46,7 @@ mcbe.sencraft.top
 然后访问👉**https://www.123684.com/s/Yjx9jv-xRZXv**  下载官方客户端，并解压
 
 ## 服务器相关功能教程
+
 服务器拥有大量的功能，如
 - 重新加载附近的区块、查看手上的方块英文ID、渐变色色轮、方块更新开关
 自定义盔甲架、自定义旗帜、自定义花卉、更改生物群系
@@ -68,8 +70,8 @@ mcbe.sencraft.top
 - `贝塞尔曲线（Twkbeziertemplate、Curvebuilding）`
 - `64视距`
 - `镜像建筑`
-- `树库、笔刷库 `  
-   
+- `树库、笔刷库 `
+
 并且拥有着完善的备份系统，以确保您的建筑安全
 :::tip[备份策略]
 服务器目前的备份策略为：

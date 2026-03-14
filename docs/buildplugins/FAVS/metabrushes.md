@@ -6,6 +6,7 @@ sidebar_position: 9
 由于技术问题，MetaBrush暂时下线，预计2025年下半年重新上线
 
 :::
+
 # MetaBrushes
 
 > Brushes in [FastAsyncVoxelSniper](./Start.md) and most versions of VoxelSniper are generally broken up into 2 primary categories, Regular Brushes or Performer Brushes. **A Regular Brush is one that does not accept performers** such as VoxelSniper's Erode, HeatRay, or Dome brushes. **A Performer Brush is one that uses performers that can be changed to alter the operation of the brush**, such as Ball, Overlay, or FillDown brushes. **MetaBrushes adds a 3rd category called MetaBrushes**, which are an extension of performer brushes, but utilize an additional algorithm performed at the end of each brush to either smooth the output or adapt it to nearby blocks.
@@ -23,6 +24,8 @@ sidebar_position: 9
 
 ---
 
+
+
 ### MetaBalls 球形笔刷
 
 - Command Syntax: `/b mb [MetaBrush Parameters]`
@@ -34,12 +37,16 @@ sidebar_position: 9
 
 **MetaBalls** 笔刷 在你点击的位置放置一个 Metaball，它将适应周围的区域。强度值高于`100.0`时，画笔会放置更多材质，而强度值较低时，则会减少放置的材质数量。推荐预设值：
 
+
+
 ### MetaVoxels Brush 体素笔刷
 
 - Command Syntax: `/b mvx [MetaBrush Parameters]`
 - Example: `/b mvx`
   
 **MetaVoxels** 笔刷的功能与 **MetaBalls** 笔刷相同，但形状是立方体而不是球体。
+
+
 
 ### MetaCylinders Brush 圆柱笔刷
 
@@ -51,13 +58,15 @@ sidebar_position: 9
 **推荐预设：**
 `/b mc height[-7.5,7.5]` 、 `/b 10` 、 `/voxel 1` ，然后使用箭。
 
-![](images/metabrush1.png)
+![](/img/images/metabrush1.png)
 
 `/b mc height[-7.5,20]`，主要使用箭。
 
-![](images/metabrush2.png)
+![](/img/images/metabrush2.png)
 
 `/b mc height[-7.5,20]` 和 `/b 25` 使用箭和火药。
+
+
 
 ### Stalacmite Brush 石笋笔刷
 
@@ -77,7 +86,9 @@ sidebar_position: 9
 **推荐预设：**
 `/b stal height[16] smooth vision`，笔刷尺寸为 12，`/voxel 1`
 
-![](images/metabrush3.png)
+![](/img/images/metabrush3.png)
+
+
 
 ### MetaSplines Brush 样条笔刷
 
@@ -90,26 +101,34 @@ sidebar_position: 9
 
 `/b msp radius[6]`，`/v 0` 可以让你在类似平原的区域绘制出漂亮的河床。
 
+
+
 ### Random Hydrosion Brush 随机水蚀笔刷
 
-- Command Syntax: `/b randhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] <reverse> [MetaBrush Parameters]`
+- Command Syntax: `/b randhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] \<reverse> [MetaBrush Parameters]`
 - Example: `/b randhydro droplets[10] radius[3] lifetime[150]`
 
 模拟随机水力侵蚀，从 `droplets` 设定的点开始，以 `lifetime` 的速度向下滚动。侵蚀强度取决于 `intensity` 值和侵蚀的 `radius` 。画笔大小将决定水滴开始的区域。4#参数将决定放置何种材料来模拟水滴路径底部的沉积物。 `blending` 参数将决定水滴被侵蚀后路径的平滑程度。这对于避免浮动块非常有用，而且可以让效果看起来更漂亮。将 `blending` 设置为 0将禁用它。将 `sediment` 设置为 none 将禁用沉积物放置。
 
+
+
 ### Maxima Hydrosion Brush 水蚀地形笔刷
 
-- Command Syntax: `/b maxhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] <reverse> [MetaBrush Parameters]`
+- Command Syntax: `/b maxhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] \<reverse> [MetaBrush Parameters]`
 - Example: `/b maxhydro droplets[10] radius[3] lifetime[150]`
 
 模拟水力侵蚀，从 `droplets` 设定的若干点开始，这些点位于刷子半径内的局部最大值处，从地形上向下滚动持续 `lifetime` 。侵蚀强度取决于 `intensity` 值和侵蚀的 `radius` `。刷子的大小将决定水滴可以开始的区域。sediment` 参数将决定放置何种材料来模拟水滴路径底部的沉积物。 `blending` 参数将决定水滴侵蚀后路径的平滑程度。这对于避免浮动块非常有用，而且可以让效果看起来更漂亮。将 `blending` 设置为 0 将禁用它。将 `sediment` 设置为 none 将禁用沉积物放置。 `spawnRadius` 参数将决定应使用多大的区域来确定某个位置是否是液滴放置的局部最大值。 `spawnRadius` 值越大，速度越慢，因此建议默认值为 2 或 3。
 
+
+
 ### Spread Hydrosion Brush 扩散水蚀笔刷
 
-- Command Syntax: `/b spreadhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] <reverse> [MetaBrush Parameters]`
+- Command Syntax: `/b spreadhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] \<reverse> [MetaBrush Parameters]`
 - Example: `/b spreadhydro droplets[10] radius[3] lifetime[150]`
 
 模拟平均分布的水力侵蚀，从 `droplets` 设定的若干点开始，以 `lifetime` 的速度向下滚动。侵蚀强度取决于 `intensity` 值和侵蚀的 `radius` 。画笔大小将决定水滴开始的区域。4#参数将决定放置何种材料来模拟水滴路径底部的沉积物。 `blending` 参数将决定水滴被侵蚀后路径的平滑程度。这对于避免浮动块非常有用，而且可以让效果看起来更漂亮。将 `blending` 设置为 0 将禁用它。将 `sediment` 设置为 none 将禁用沉积物放置。
+
+
 
 ### Airosion Brush 风蚀笔刷
 
@@ -128,6 +147,8 @@ sidebar_position: 9
 **推荐预置：**
 将 `/b wind streams[30] radius[3] lifetime[150]` 与 `/b 30` 和 `/v air` 配合使用，在同一方向上单击几次，同时将鼠标悬停在离该区域稍远的位置。然后使用平滑工具，如 **MetaBlend** 笔刷 `/b mbb` 或 **MetaErode** 笔刷平滑预设 `/b me smooth` 来平滑该区域。
 
+
+
 ### MetaBlend Brush 混色笔刷
 
 - Command Syntax: `/b mbb threshold[decimal] radius[integer] air/liquid`
@@ -142,12 +163,16 @@ sidebar_position: 9
 - `air` : 替换空气
 - `liquid` : 替换液体
 
+
+
 ### Directional Overlay Brush 定向叠加笔刷
 
 - Command Syntax: `/b dover depth[integer] mode`
 - Example: `/b dover depth[10] all` or `/b dover depth[10] vision`
 
 **DirectionalOverlay** 笔刷的行为与 **VoxelSniper** 中的覆盖笔刷类似，但作用方向是指定的。点击箭头的前两次可以设置方向。第三次点击则会清除方向。火药将按照当前设置的方向执行叠加。 `vision` 参数可将方向锁定在您的视线范围内。 `all` 参数将使其覆盖所有区块，而不仅仅是自然区块。
+
+
 
 ### Enhanced Spline Brush 样条笔刷
 
@@ -164,6 +189,8 @@ sidebar_position: 9
 
 - `/b es startRadius[10] endRadius[10] quality[10] tension[0] continuity[0] bias[0]`
 这可以让你获得一个漂亮的管状形状。
+
+
 
 
 ### MetaSnow Brush 雪笔刷

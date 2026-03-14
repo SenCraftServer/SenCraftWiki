@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 ---
+
 # 群系
 
 ### 生物群系列表
@@ -11,7 +12,7 @@ sidebar_position: 6
 
 ### 用法
 
-`//biomelist [-p <page>]`
+`//biomelist [-p \<page\>]`
 
 ### 权限
 
@@ -19,9 +20,8 @@ sidebar_position: 6
 
 ### 示例
 
-<figure>
-<img src="https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/mvdiNnQ.6smmxwrm9oo0.png" />
-</figure>
+\<figure\>
+![](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/mvdiNnQ.6smmxwrm9oo0.png)
 
 ## 生物群系信息
 
@@ -47,9 +47,9 @@ sidebar_position: 6
 
 1. ![biomeinfo.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/R5G8XP9.2y57hbula940.png)
 
-2. ![biomeinfo-p.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/I2hD28o.jwms8r3jg8.png)
+1. ![biomeinfo-p.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/I2hD28o.jwms8r3jg8.png)
 
-3. ![biomeinfo-t.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/PxB1JOG.6vsusr775nk0.png)
+1. ![biomeinfo-t.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/PxB1JOG.6vsusr775nk0.png)
 
 ## 设置生物群系
 
@@ -63,7 +63,7 @@ sidebar_position: 6
 
 ### 用法
 
-`//setbiome <biome> [-p]`
+`//setbiome \<biome> [-p]`
 
 ### 权限
 
@@ -73,4 +73,4 @@ sidebar_position: 6
 
 1. ![setbiome.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/ut2Im7O.173t51jee00w.jpg)
 
-2. ![setbiome-p.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/MxdpUFK.1dfuoanox1uo.jpg)
+1. ![setbiome-p.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/MxdpUFK.1dfuoanox1uo.jpg)

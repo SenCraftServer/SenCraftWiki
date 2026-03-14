@@ -8,10 +8,9 @@ sidebar_position: 2
 
 笔刷命令是进入 VoxelSniper 的入口。此命令可以简单到更改活动笔刷类型、大小，或发出一系列指令（例如侵蚀笔刷的设置）。许多笔刷的行为在很大程度上取决于您加载到Sniper笔刷中的设置，因此在开始之前，请确保知道您使用的设置是什么！
 
-![img.png](images/Commands/brush.png)
+![img.png](/img/images/Commands/brush.png)
 
 **用法：** `/b [指令]`
-
 
 :::tip 
 
@@ -24,12 +23,14 @@ sidebar_position: 2
 
 ---
 
+
+
 ## 样式
 
 您可以使用 `/v m` 来为笔刷设置样式。`m` 是要在笔刷上使用的方块或图案的占位符。
 以下是示例：
 
-![img.png](images/Commands/performerExample.png)
+![img.png](/img/images/Commands/performerExample.png)
 
 :::danger 注意！
 
@@ -71,23 +72,25 @@ sidebar_position: 2
 ---
 
 ## 指令集详解
+
 让我们看看这些变量如何从Erosion Brush的`melt`预设中获得所需的效果。预设的指令如下：
 
 `/b e e2 f5 re1 rf1 b10.`
 
 **别名：** 无
 
-
-* **e2** - 我们的笔刷将侵蚀具有2个或更多暴露面的方块。这意味着只有深嵌在地形中的方块将被侵蚀，从而为我们提供所需的地形“枯萎”。
-* **f5** - 仅当被侵蚀的内容创建了一个具有5个覆盖面的方块空间时，才会创建新方块。这只是为了使事物更加平滑，因为我们融化了我们的地形。
-* **re1** - 这是我们的侵蚀的笔刷强度参数。溶解笔刷在分配的区域内重复其侵蚀功能一次。
-* **ref** - 这是我们的填充的笔刷强度参数。溶解笔刷在分配的区域内重复其填充功能一次。
+- **e2** - 我们的笔刷将侵蚀具有2个或更多暴露面的方块。这意味着只有深嵌在地形中的方块将被侵蚀，从而为我们提供所需的地形“枯萎”。
+- **f5** - 仅当被侵蚀的内容创建了一个具有5个覆盖面的方块空间时，才会创建新方块。这只是为了使事物更加平滑，因为我们融化了我们的地形。
+- **re1** - 这是我们的侵蚀的笔刷强度参数。溶解笔刷在分配的区域内重复其侵蚀功能一次。
+- **ref** - 这是我们的填充的笔刷强度参数。溶解笔刷在分配的区域内重复其填充功能一次。
 
 >
 注意，*只需一次递归*，溶解笔刷就有多么强大！
 ::
 
 ---
+
+
 
 ## 随机侵蚀笔刷
 常规侵蚀笔刷的缺点是，经过多次使用，一个区域可能会变得太过于完美光滑。例如，景观可能看起来更像融化的蜡而不是泥土和石头。这个
@@ -105,25 +108,24 @@ sidebar_position: 2
 ::
 
 **带箭矢的示例：**
-![img.png](images/Commands/randomErodeArrow.png)
+![img.png](/img/images/Commands/randomErodeArrow.png)
 
 **使用火药的示例：**
-![img.png](images/Commands/randomErodeGunpowder.png)
+![img.png](/img/images/Commands/randomErodeGunpowder.png)
 ---
 
 ## 叠加/表层土壤笔刷
 
 叠加笔刷会覆盖现有地形。
 
-![img.png](images/Commands/bOverlay.png)
+![img.png](/img/images/Commands/bOverlay.png)
 
-用法：`/b over d[#]:` 
+用法：`/b over d[#]:`
 叠加笔刷将“喷漆”到其区域中的最上方的方块，以由您的“/v”命令设置的方块类型。这可用于在使用侵蚀笔刷后轻松清理任何暴露的材料，或在两个地形块之间创建新的填充材料。
 
 用法：`/b over info:`
 
-![img.png](images/Commands/overlayInfo.png)
-
+![img.png](/img/images/Commands/overlayInfo.png)
 
 >
 默认情况下，此笔刷仅在“自然”材料上喷涂（石头、泥土、砂砾、草、树木、矿石等）
@@ -135,37 +137,41 @@ sidebar_position: 2
 `/b over all` 将设置笔刷以覆盖所有类型的材料。
 您可以使用 `/b over some` 返回到“自然”模式，覆盖笔刷会在其附近喷涂。
 
-::alert{type="success"}
 `/b over d5` + `/v 12` + `/b 20` + `/b over all` 将是一个相当大的“沙漠制造者”笔刷，将在箭矢中摧毁其路径上的任何结构。
 ::
 
 ---
 
+
+
 ## 溅射叠加笔刷
 
 此笔刷结合了溅射和叠加笔刷的功能。
 
-![img.png](images/Commands/splatterOverlay.png)
+![img.png](/img/images/Commands/splatterOverlay.png)
 
 用法：`/b sover s[#] g[#] r[#]`
 
 
 >通过 /b sover info 查看的效果: ::
 
-![img.png](images/Commands/splatterOverlayInfo.png)
+![img.png](/img/images/Commands/splatterOverlayInfo.png)
 
 `/v` Voxel Select 值用于像叠加笔刷一样绘制，使用溅射的种子`s`、生长`g`和递归`r`。
 
 ---
 
 ## 底层笔刷
+
 底层基本上是叠加笔刷的相反，将洞穿洞穴和建筑物的顶部涂成由您的 `/v` 命令设置的样式。 `d`变量确定笔刷的深度。这将是您希望笔刷穿透的高度。
 
-![img.png](images/Commands/underlayInfo.png)
+![img.png](/img/images/Commands/underlayInfo.png)
 
 用法：`/b under d[#]`
 
 ---
+
+
 ## 混合笔刷
 
 这套笔刷允许使用者清理不同类型材料之间的不整齐边界。
@@ -182,7 +188,7 @@ sidebar_position: 2
 
 混合笔刷使用标准笔刷大小和几种可用大小的形状：
 
-![img.png](images/Commands/blendBall.png)
+![img.png](/img/images/Commands/blendBall.png)
 
 **用法：**
 * `/b bd`: 混合圆盘
@@ -197,9 +203,9 @@ sidebar_position: 2
 
 海绵笔刷使用标准笔刷大小变量以球形移除所有液体（水或岩浆）。
 
-![img.png](images/Commands/drain.png)
+![img.png](/img/images/Commands/drain.png)
 
 用法：`/b drain`：
 
-* `/b drain d`: 切换笔刷形状为圆盘。
-* `/b drain true|false`: 使用真实的球形算法或正常算法。
+- `/b drain d`: 切换笔刷形状为圆盘。
+- `/b drain true|false`: 使用真实的球形算法或正常算法。

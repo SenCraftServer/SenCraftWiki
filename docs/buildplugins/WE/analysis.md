@@ -1,8 +1,8 @@
 ---
 sidebar_position: 5
 ---
-# 分析
 
+# 分析
 
 显示目标方块的NBT信息，以用户友好的字符串形式（纯文本）呈现，该方块位于你的准星中。
 
@@ -20,9 +20,8 @@ sidebar_position: 5
 
 **示例:**
 
-<figure>
-<img src="https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/dNAu8xR.3njg24zt78y0.png" />
-</figure>
+\<figure\>
+![](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/dNAu8xR.3njg24zt78y0.png)
 
 ### Chunkinfo
 
@@ -46,9 +45,8 @@ sidebar_position: 5
 
 #### 示例
 
-<figure>
-<img src="https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/tzRoWmB.7kf884ajit80.png" />
-</figure>
+\<figure\>
+![](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/tzRoWmB.7kf884ajit80.png)
 
 #### Distr
 
@@ -70,7 +68,7 @@ sidebar_position: 5
 
 次要：
 
-`//distr [-c] [-d] [-p <page>]`
+`//distr [-c] [-d] [-p \<page\>]`
 
 #### 权限
 
@@ -81,7 +79,9 @@ sidebar_position: 5
 ( 1 ) ![distr.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/MA3YAnj.6xl5hnsbgw80.png)
 
 ( 2 ) ![distr-d.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/rd5Dkz4.wm03ywaidi8.png)
+
 #
+
 ## Count
 
 使用此命令获取选择区域中特定类型方块的数量。
@@ -90,7 +90,7 @@ sidebar_position: 5
 
 #### 用法
 
-`//count <block>`
+`//count \<block\>`
 
 #### 权限
 
@@ -98,10 +98,11 @@ sidebar_position: 5
 
 #### 示例
 
-<figure>
-<img src="https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/v5d7qps.6blw8xfh7m00.png" />
-</figure>
-#
+\<figure\>
+![](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/v5d7qps.6blw8xfh7m00.png)
+
+##
+
 ## Size
 
 使用此命令获取有关选择区域的不同测量和其他信息。
@@ -118,48 +119,43 @@ sidebar_position: 5
 
 #### 分析选择区域
 
-<figure>
-<img src="https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/O0HHzyW.yzkghs9dopc.png" />
-</figure>
+\<figure\>
+![](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/O0HHzyW.yzkghs9dopc.png)
 
 1.  选择类型
 
-2.  类型特定的选择信息
+1.  类型特定的选择信息
 
-3.  长度、高度和宽度的最大尺寸
+1.  长度、高度和宽度的最大尺寸
 
-4.  方块长度的对角线距离
+1.  方块长度的对角线距离
 
-5.  方块总数（包括空气）
+1.  方块总数（包括空气）
 
 #### 分析剪贴板
 
-<figure>
-<img src="https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/JffswW6.1sxy237is880.png"
-alt="size-d_chatoutput_selection.png" />
-</figure>
+\<figure\>
+![](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/JffswW6.1sxy237is880.png)
 
 1.  剪贴板列表编号
 
-2.  长度、高度和宽度的方块尺寸
+1.  长度、高度和宽度的方块尺寸
 
-3.  您的复制位置（对于原理图偏移很重要）
+1.  您的复制位置（对于原理图偏移很重要）
 
-4.  方块总数（包括空气）
+1.  方块总数（包括空气）
 
 #### 分析原理图
 
-<figure>
-<img src="https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/NqfkzeB.615v0tmptcc0.png"
-alt="size-d_chatoutput_schematic.png" />
-</figure>
+\<figure\>
+![](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231117/NqfkzeB.615v0tmptcc0.png)
 
 1.  原理图名称
 
-2.  长度、高度和宽度的方块尺寸
+1.  长度、高度和宽度的方块尺寸
 
-3.  原理图偏移（一个角落和您保存位置之间的距离）
+1.  原理图偏移（一个角落和您保存位置之间的距离）
 
-4.  方块总数（包括空气）
+1.  方块总数（包括空气）
 
 >请注意，原理图总是呈立方体形状。

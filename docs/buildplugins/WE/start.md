@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
 ---
+
 # WorldEdit 教程
+
 本教程部分内容节选自SenCraft社区Wiki、MC插件百科
 > 创世神是一个很有用的建筑工具，掌握后在建筑方面理论上就会变得无所不利（雾）
 > WE 即 World Edit ，FAWE 即 Fast Async World Edit，
@@ -27,7 +29,7 @@ sidebar_position: 1
 //undo
 ```
 
-想要填充**其他方块** 或者纹理？输入 `//set <方块id>` 比如:
+想要填充**其他方块** 或者纹理？输入 `//set \<方块id\>` 比如:
 
 - `//set oak_slab`
 - `//set 1`
@@ -35,7 +37,6 @@ sidebar_position: 1
 - `//set white`
 - `//set #cell[2][pink,cyan]`
 
-::alert{type="success"}
 🚩 可以使用快捷键 `F3 + h` 启用高级工具提示，然后打开物品栏，把指针放到物品上就能看到
 
 > 推荐安装 wecui 来可视化选区
@@ -56,15 +57,15 @@ sidebar_position: 1
 
 > [**挖坑填坑**](geometry)
 
-> [**基础蒙版（WE）**](mask1) 和 [**高级蒙版（FAWE）**](masks2) 
+> [**基础蒙版（WE）**](mask1) 和 [**高级蒙版（FAWE）**](masks2)
 
 > [**环境处理**](nature)
 
 > [**传送**](navigation)
 
-> [**变换**](transforms) 
+> [**变换**](transforms)
 
-> [**笔刷**](brushes) 
+> [**笔刷**](brushes)
 :::tip
  服务器菜单中的WorldEdit Wiki
 在服务器菜单（`/bs`）中，也有WorldEdit Wiki，位置为菜单的左下角（感谢`zishu123`老师的Wiki！！！）

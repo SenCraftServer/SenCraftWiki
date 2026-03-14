@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 ---
+
 # 挖坑填坑
 
 ## Fill
@@ -21,7 +22,7 @@ sidebar_position: 7
 
 ### 用法
 
-`//fill <pattern> <radius> [depth] [direction]`
+`//fill \<pattern> \<radius> [depth] [direction]`
 
 ### 权限
 
@@ -31,11 +32,11 @@ sidebar_position: 7
 
 1.  ![fill\_example.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/6WItisE.4ykqc4cfdn40.jpg)
 
-2.  ![fill.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/6EZs2B2.1ucnkwj5n89s.jpg)
+1.  ![fill.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/6EZs2B2.1ucnkwj5n89s.jpg)
 
-3.  ![fill\_depth.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/EwP81Kg.6sm8rh06xmk0.jpg)
+1.  ![fill\_depth.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/EwP81Kg.6sm8rh06xmk0.jpg)
 
-4.  ![fill\_direction.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/vvEzTvC.6i5ptbiuh740.jpg)
+1.  ![fill\_direction.png](https://fastly.statically.io/gh/Lala-0x3f/picx-images-hosting@master/20231116/vvEzTvC.6i5ptbiuh740.jpg)
 
 ## Removenear
 
@@ -49,7 +50,7 @@ sidebar_position: 7
 
 ### 用法
 
-`//removenear <block> [size]`
+`//removenear \<block> [size]`
 
 ### 权限
 

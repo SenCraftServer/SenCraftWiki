@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 ---
+
 # Voxel Sniper 教程
 
 Voxel Sniper 是一个强大的笔刷工具，主要适用于打造地形、雕刻和概念设计。
@@ -22,6 +23,6 @@ VS 指定
 >
 > [实体笔刷](Entity-Brushes.md)
 >
-> [自然环境笔刷](Environment-brushes.md) 
+> [自然环境笔刷](Environment-brushes.md)
 >
 > [MetaBrushes](metabrushes.md)
