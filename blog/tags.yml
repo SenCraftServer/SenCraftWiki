@@ -2,3 +2,7 @@ facebook:
   label: Facebook
   permalink: /facebook
   description: Facebook tag description
+update:
+  label: 更新
+  permalink: /update
+  description: 更新公告
