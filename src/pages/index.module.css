@@ -1,23 +1,270 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
+.heroSection {
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%);
+  padding: 2rem;
+}
+
+[data-theme='dark'] .heroSection {
+  background: linear-gradient(135deg, #052e16 0%, #1a1a2e 50%, #052e16 100%);
+}
+
+.heroContainer {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 0 3rem;
+}
+
+.heroLeft {
+  flex: 1;
+  max-width: 520px;
+  text-align: left;
+}
+
+.heroRight {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.heroTitleBlack {
+  color: #1a1a1a;
+}
+
+[data-theme='dark'] .heroTitleBlack {
+  color: #ffffff;
+}
+
+.heroTitleGreen {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+[data-theme='dark'] .heroDescription {
+  color: #9ca3af;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.buttonPrimary {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(34, 197, 94, 0.3);
+}
+
+.buttonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  color: #ffffff;
+}
+
+.buttonSecondary {
+  background: transparent;
+  color: #22c55e;
+  border: 2px solid #22c55e;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.buttonSecondary:hover {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.terminalWindow {
+  width: 100%;
+  max-width: 540px;
+  background: #0d1117;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  background: #161b22;
+  border-bottom: 1px solid #21262d;
+}
+
+.terminalButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminalButtonRed {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+}
+
+.terminalButtonYellow {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffbd2e;
+}
+
+.terminalButtonGreen {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #27c93f;
+}
+
+.terminalTitle {
+  font-size: 0.8rem;
+  color: #8b949e;
+  font-weight: 500;
+}
+
+.terminalButtonsPlaceholder {
+  width: 52px;
+}
+
+.terminalBody {
+  padding: 1.25rem;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.terminalLine {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.terminalPrompt {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.terminalCommand {
+  color: #f0f6fc;
+}
+
+.terminalOutput {
+  margin-bottom: 0.25rem;
+}
+
+.terminalTime {
+  color: #6e7681;
+}
+
+.terminalInfo {
+  color: #58a6ff;
+}
+
+.terminalSuccess {
+  color: #3fb950;
+}
+
+.terminalText {
+  color: #c9d1d9;
+}
+
+.terminalCursor {
+  color: #22c55e;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .heroLeft {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .heroRight {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroButtons {
+    justify-content: center;
+  }
+
+  .terminalWindow {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroSection {
+    padding: 1.5rem;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .terminalBody {
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
 }

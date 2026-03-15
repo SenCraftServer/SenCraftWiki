@@ -32,8 +32,8 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
@@ -46,7 +46,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/SenCraftServer/SenCraftWiki/tree/main',
         },
         blog: {
           showReadingTime: true,
@@ -68,13 +68,27 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en', 'zh'],
+        indexBlog: true,
+        indexDocs: true,
+        explicitSearchResultPath: true,
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'SenCraftWiki',
+        title: 'SenCraft',
         logo: {
           alt: 'SenCraft Logo',
           src: 'img/favicon.ico',
@@ -84,9 +98,14 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'SenCraftWiki',
+            label: '文档',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/blog', label: '博客', position: 'left'},
+          {
+            to: '/docs/join/getting-started',
+            label: '加入我们',
+            position: 'left',
+          },
           {
             href: 'https://github.com/SenCraftServer/SenCraftWiki',
             label: 'GitHub',
@@ -95,7 +114,7 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Wiki',

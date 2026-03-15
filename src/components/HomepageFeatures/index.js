@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: '官方Wiki',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/favicon.ico').default,
     description: (
       <>
         由SenCraft管理组进行维护，内容新、可读性强。
