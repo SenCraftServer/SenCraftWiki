@@ -50,28 +50,28 @@ dependencies {
 ### Maven - PlotSquared 核心模块
 
 ```xml
-\<repositories\>
-    \<repository\>
-        \<id\>papermc</id>
-        \<url\>https://repo.papermc.io/repository/maven-public/</url>
+<repositories>
+    <repository>
+        <id>papermc</id>
+        <url>https://repo.papermc.io/repository/maven-public/</url>
     </repository>
 </repositories>
-\<dependencyManagement\>
-    \<dependencies\>
-        \<dependency\>
-            \<groupId\>com.intellectualsites.bom</groupId>
-            \<artifactId\>bom-newest</artifactId>
-            \<version\>1.40</version>
-            \<scope\>import</scope>
-            \<type\>pom</type>
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.intellectualsites.bom</groupId>
+            <artifactId>bom-newest</artifactId>
+            <version>1.40</version>
+            <scope>import</scope>
+            <type>pom</type>
         </dependency>
     </dependencies>
 </dependencyManagement>
-\<dependencies\>
-    \<dependency\>
-        \<groupId\>com.intellectualsites.plotsquared</groupId>
-        \<artifactId\>plotsquared-core</artifactId>
-        \<scope\>provided</scope>
+<dependencies>
+    <dependency>
+        <groupId>com.intellectualsites.plotsquared</groupId>
+        <artifactId>plotsquared-core</artifactId>
+        <scope>provided</scope>
     </dependency>
 </dependencies>
 ```bash
@@ -79,38 +79,38 @@ dependencies {
 ### Maven - PlotSquared 核心和 Bukkit
 
 ```xml
-\<repositories\>
-    \<repository\>
-        \<id\>papermc</id>
-        \<url\>https://repo.papermc.io/repository/maven-public/</url>
+<repositories>
+    <repository>
+        <id>papermc</id>
+        <url>https://repo.papermc.io/repository/maven-public/</url>
     </repository>
 </repositories>
-\<dependencyManagement\>
-    \<dependencies\>
-        \<dependency\>
-            \<groupId\>com.intellectualsites.bom</groupId>
-            \<artifactId\>bom-newest</artifactId>
-            \<version\>1.40</version>
-            \<scope\>import</scope>
-            \<type\>pom</type>
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.intellectualsites.bom</groupId>
+            <artifactId>bom-newest</artifactId>
+            <version>1.40</version>
+            <scope>import</scope>
+            <type>pom</type>
         </dependency>
     </dependencies>
 </dependencyManagement>
-\<dependencies\>
-\<dependency\>
-    \<groupId\>com.intellectualsites.plotsquared</groupId>
-    \<artifactId\>plotsquared-core</artifactId>
-    \<scope\>provided</scope>
+<dependencies>
+<dependency>
+    <groupId>com.intellectualsites.plotsquared</groupId>
+    <artifactId>plotsquared-core</artifactId>
+    <scope>provided</scope>
 </dependency>
 
-\<dependency\>
-    \<groupId\>com.intellectualsites.plotsquared</groupId>
-    \<artifactId\>plotsquared-bukkit</artifactId>
-    \<scope\>provided</scope>
-    \<exclusions\>
-        \<exclusion\>
-            \<artifactId\>plotsquared-core</artifactId>
-            \<groupId\>*</groupId>
+<dependency>
+    <groupId>com.intellectualsites.plotsquared</groupId>
+    <artifactId>plotsquared-bukkit</artifactId>
+    <scope>provided</scope>
+    <exclusions>
+        <exclusion>
+            <artifactId>plotsquared-core</artifactId>
+            <groupId>*</groupId>
         </exclusion>
     </exclusions>
 </dependency>

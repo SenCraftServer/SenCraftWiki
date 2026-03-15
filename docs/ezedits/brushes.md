@@ -9,7 +9,7 @@ sidebar_position: 3
 ## 渐变笔刷
 
 ```bash
-//ezbr gradient \<palette> [radius] [interpolation] [strength] [-a] [-n \<noise\>] [-z \<scale\>] [-d \<distanceFunction\>]
+//ezbr gradient <palette> [radius] [interpolation] [strength] [-a] [-n <noise>] [-z <scale>] [-d <distanceFunction>]
 ```
 
 这个笔刷允许你首先通过选择两个点来定义一个平面，然后你可以沿着这个平面的距离使用梯度来涂色。
@@ -29,16 +29,16 @@ sidebar_position: 3
 
 `-a`：激活时，允许梯度替换空气方块。
 
-`-n \<noise\>`（默认：）：为梯度效果添加底层噪声场。
+`-n <noise>`（默认：）：为梯度效果添加底层噪声场。
 
-`-z \<scale\>`（默认：1）：修改噪声的比例。
+`-z <scale>`（默认：1）：修改噪声的比例。
 
-`-d \<distanceFunction\>`（默认：NONE）：设置距离模式，根据给定距离函数从初始方块开始工作。
+`-d <distanceFunction>`（默认：NONE）：设置距离模式，根据给定距离函数从初始方块开始工作。
 
 ### 路径渐变笔刷
 
 ```bash
-//ezbr gradientstroke \<palette> [radius] [interpolation] [strength] [-ad] [-n \<noise\>] [-z \<scale\>]
+//ezbr gradientstroke <palette> [radius] [interpolation] [strength] [-ad] [-n <noise>] [-z <scale>]
 ```
 
 该渐变笔刷根据路径进行描绘
@@ -60,14 +60,14 @@ sidebar_position: 3
 
 `-d`：激活“距中心距离”模式，该模式根据距离笔画线中心而不是沿着笔画的距离应用梯度。
 
-`-n \<noise\>`（默认：）：为梯度效果添加底层噪声场。
+`-n <noise>`（默认：）：为梯度效果添加底层噪声场。
 
-`-z \<scale\>`（默认：1）：修改噪声的比例。
+`-z <scale>`（默认：1）：修改噪声的比例。
 
 ### 位移色盘笔刷
 
 ```bash
-//ezbr paletteshift \<palette> [radius] [shift]
+//ezbr paletteshift <palette> [radius] [shift]
 ```
 
 用颜色组中的方块替换与之匹配的方块，并按给定量进行偏移。

@@ -12,7 +12,7 @@ sidebar_position: 4
 ### 圆锥体
 
 ```bash
-//ezsh cone \<pattern> \<radii> \<height> [rotation] [-do]
+//ezsh cone <pattern> <radii> <height> [rotation] [-do]
 ```
 
 `pattern`：指定块模式。
@@ -30,7 +30,7 @@ sidebar_position: 4
 ### 穹顶
 
 ```bash
-//ezsh polydome \<pattern> \<sides> \<radius> \<height> [-v]
+//ezsh polydome <pattern> <sides> <radius> <height> [-v]
 ```
 
 `pattern`：指定块模式。
@@ -46,7 +46,7 @@ sidebar_position: 4
 ### 多边形
 
 ```bash
-//ezsh polygon \<pattern> \<sides> \<radius> \<height> [direction]
+//ezsh polygon <pattern> <sides> <radius> <height> [direction]
 ```
 
 `pattern`：指定块模式。
@@ -62,7 +62,7 @@ sidebar_position: 4
 ### 正方形
 
 ```bash
-//ezsh square \<pattern> \<radius> \<height> [-fw]
+//ezsh square <pattern> <radius> <height> [-fw]
 ```
 
 `pattern`：指定块模式。
@@ -78,7 +78,7 @@ sidebar_position: 4
 ### 四面体
 
 ```bash
-//ezsh tetrahedron \<pattern> \<radius> [rotation] [-o]
+//ezsh tetrahedron <pattern> <radius> [rotation] [-o]
 ```
 
 `pattern`：指定块模式。
@@ -92,7 +92,7 @@ sidebar_position: 4
 ### 甜甜圈
 
 ```bash
-//ezsh torus \<pattern> \<major_radius> \<minor_radius> [-dors]
+//ezsh torus <pattern> <major_radius> <minor_radius> [-dors]
 ```
 
 `pattern`：指定块模式。
@@ -134,7 +134,7 @@ sidebar_position: 4
 ### 噪声
 
 ```bash
-//ezdeform noise \<noise> [strength] [-z \<scale\>] [-s \<seed\>]
+//ezdeform noise <noise> [strength] [-z <scale>] [-s <seed>]
 ```
 
 `noise`：指定用于变形的噪声类型。
@@ -152,7 +152,7 @@ sidebar_position: 4
 ### 旋转
 
 ```bash
-//ezdeform rotate \<angle> [-o] 
+//ezdeform rotate <angle> [-o] 
 ```
 
 `angle`：设置旋转角度（以度为单位）。
@@ -162,7 +162,7 @@ sidebar_position: 4
 ### Voronoi 化
 
 ```bash
-//ezdeform voronoialize [size] [air_gap] [-s \<seed\>]
+//ezdeform voronoialize [size] [air_gap] [-s <seed>]
 ```
 
 `size`（默认值：12）：确定 voronoi 单元格的大小。
@@ -172,7 +172,7 @@ sidebar_position: 4
 `-s`（默认值：-1）：用于生成模式的可选种子。
 
 ```bash
-//ezdeform voronoialize2 \<amount> [air_gap] [-s \<seed\>] [-r \<seed_repulsion\>] [-n \<normalOffset\>]
+//ezdeform voronoialize2 <amount> [air_gap] [-s <seed>] [-r <seed_repulsion>] [-n <normalOffset>]
 ```
 
 `amount`：指定 voronoi 模式中的单元格数量。
@@ -188,7 +188,7 @@ sidebar_position: 4
 ### 体素化
 
 ```bash
-//ezdeform voxelize \<scales> \<gap> \<distortion> [-i \<primary\>] [-j \<secondary\>] [-s \<seed\>] [-hv]
+//ezdeform voxelize <scales> <gap> <distortion> [-i <primary>] [-j <secondary>] [-s <seed>] [-hv]
 ```
 
 `scales`（默认：3,3,3）：设置每个维度的比例。
@@ -214,7 +214,7 @@ sidebar_position: 4
 ### 环境
 
 ```bash
-//ezt ambient \<mask> \<palette> [radius] [brightness] [contrast]
+//ezt ambient <mask> <palette> [radius] [brightness] [contrast]
 ```
 
 通过近似区域中块的氛围来呈现纹理。
@@ -232,7 +232,7 @@ sidebar_position: 4
 ### 轴对齐渐变
 
 ```bash
-//ezt axisgradient \<mask> \<palette> [axis] [-r]
+//ezt axisgradient <mask> <palette> [axis] [-r]
 ```
 
 使用与单个轴对齐的渐变对区域进行纹理处理。
@@ -248,7 +248,7 @@ sidebar_position: 4
 ### 混色
 
 ```bash
-//ezt blend \<palette> [radius] [-v]
+//ezt blend <palette> [radius] [-v]
 ```
 
 混合区域内的色彩，创造柔和的色彩过渡。
@@ -262,7 +262,7 @@ sidebar_position: 4
 ### 方块光照
 
 ```bash
-//ezt blocklight \<mask> \<palette> [-v] [-s]
+//ezt blocklight <mask> <palette> [-v] [-s]
 ```
 
 根据游戏中的方块光照级别（不包括天窗）对区域进行纹理处理。
@@ -278,7 +278,7 @@ sidebar_position: 4
 ### 细胞纹理
 
 ```bash
-//ezt cells \<mask> \<palette> \<amount> [brightness] [contrast] [-s] [-r]
+//ezt cells <mask> <palette> <amount> [brightness] [contrast] [-s] [-r]
 ```
 
 使用细胞格状图案对区域进行纹理处理。
@@ -300,7 +300,7 @@ sidebar_position: 4
 ### 曲率纹理
 
 ```bash
-//ezt curvature \<mask> \<palette> [radius] [brightness] [contrast]
+//ezt curvature <mask> <palette> [radius] [brightness] [contrast]
 ```
 
 通过近似曲率对区域进行纹理处理。
@@ -318,7 +318,7 @@ sidebar_position: 4
 ### 流场纹理
 
 ```bash
-//ezt flow \<mask> \<palette> [exposure] [iterations] [velocity] [paletteScalar] [noise] [-m] [-g] [-f]
+//ezt flow <mask> <palette> [exposure] [iterations] [velocity] [paletteScalar] [noise] [-m] [-g] [-f]
 ```
 
 在所选内容内的所有曲面上生成流场效果。
@@ -346,7 +346,7 @@ sidebar_position: 4
 ### 噪声纹理
 
 ```bash
-//ezt noise \<mask> \<palette> \<noise> [-z] [-s]
+//ezt noise <mask> <palette> <noise> [-z] [-s]
 ```
 
 使用给定噪声对区域进行纹理处理。
@@ -364,7 +364,7 @@ sidebar_position: 4
 ### 点光效果
 
 ```bash
-//ezt pointlight \<mask> \<palette> [range] [radius] [interval] [-l] [-o] [-r][-f]
+//ezt pointlight <mask> <palette> [range] [radius] [interval] [-l] [-o] [-r][-f]
 ```
 
 根据曲面相对于光源的方向对区域进行纹理处理。
@@ -390,7 +390,7 @@ sidebar_position: 4
 ### 错位效果
 
 ```bash
-//ezt shift \<palette> [shift]
+//ezt shift <palette> [shift]
 ```
 
 通过将调色板移动一定量来修改区域的纹理。
@@ -402,7 +402,7 @@ sidebar_position: 4
 ### 日光效果
 
 ```bash
-//ezt sunlight \<mask> \<palette> [radius] [interval] [-l] [-o] [-r]
+//ezt sunlight <mask> <palette> [radius] [interval] [-l] [-o] [-r]
 ```
 
 使用全局光源方向对区域进行纹理处理，以控制调色板的应用。
@@ -424,7 +424,7 @@ sidebar_position: 4
 ### 自定义/组合纹理
 
 ```bash
-//ezt advanced \<mask> \<palette> \<texture\>
+//ezt advanced <mask> <palette> <texture>
 ```
 
 使用eztexture的更强大的界面。它可以访问所有其他 eztexture 命令，也可以混合/组合它们。这意味着您可以同时进行环境纹理和阳光纹理处理。
@@ -435,9 +435,9 @@ sidebar_position: 4
 
 `texture`：纹理规范。
 
-**如何定义** `\<texture\>`
+**如何定义** `<texture>`
 
-*A* 遵循以下指定复杂对象的常用方法： 每个 Texture 类型都有自己的一组参数。您可以根据需要设置任意数量的参数。如果未设置参数，则将改用默认值。每个参数可以接受不同的输入。**有些参数接受数字，有些接受 3D 向量，有些接受 Noise 参数，有些甚至接受 Texture 对象本身。** *A* 可以是任何现有的纹理模式。一些简单的例子：`\<texture\>\<type\>(\<parameter1\>:\<value1\>,\<parameter2\>:\<value2\>)\<texture\>`
+*A* 遵循以下指定复杂对象的常用方法： 每个 Texture 类型都有自己的一组参数。您可以根据需要设置任意数量的参数。如果未设置参数，则将改用默认值。每个参数可以接受不同的输入。**有些参数接受数字，有些接受 3D 向量，有些接受 Noise 参数，有些甚至接受 Texture 对象本身。** *A* 可以是任何现有的纹理模式。一些简单的例子：`<texture><type>(<parameter1>:<value1>,<parameter2>:<value2>)<texture>`
 
 - `Ambient`
 - `Ambient()`
@@ -453,7 +453,7 @@ sidebar_position: 4
 
 **组合纹理**
 
-以下纹理具有 `()/()` 参数，这些参数本身接受参数，允许您组合纹理模式：`Texture1` `T1` `Texture2` `T2` `\<texture\>`
+以下纹理具有 `()/()` 参数，这些参数本身接受参数，允许您组合纹理模式：`Texture1` `T1` `Texture2` `T2` `<texture>`
 
 - `Add(T1:...,T2:...)`
 - `Subtract(T1:...,T2:...)`
@@ -464,7 +464,7 @@ sidebar_position: 4
 - `Lighten(T1:...,T2:...)`
 - `Difference(T1:...,T2:...)`
 
-以下纹理具有`()` 参数，这些参数本身接受参数，允许您调整/后处理纹理：`Texture` `T` `\<texture\>`
+以下纹理具有`()` 参数，这些参数本身接受参数，允许您调整/后处理纹理：`Texture` `T` `<texture>`
 
 - `Adjust(T:...,Brightness:...,Contrast:...)`
 - `Invert(T:...)`
@@ -488,7 +488,7 @@ sidebar_position: 4
 命令将形状分散在所选内容中块的曲面上，它带有许多预定义的形状，以及使用 WorldEdit 表达式来定义您自己的形状的能力。
 
 ```bash
-//ezscatter [-s \<dimensions\>] [-o \<sizeMultiplier\>] [-n \<density\>] [-c \<angleDeg\>] [-k \<rotationAxis\>] [-i \<primaryAxis\>] [-j \<secondaryAxis\>] [-d \<filterDirections\>] [-e \<filterThreshold\>] [-m \<maskFilter\>] [-p \<palette\>] \<shape> [-a] [-b] [-r] [-u] [-w]
+//ezscatter [-s <dimensions>] [-o <sizeMultiplier>] [-n <density>] [-c <angleDeg>] [-k <rotationAxis>] [-i <primaryAxis>] [-j <secondaryAxis>] [-d <filterDirections>] [-e <filterThreshold>] [-m <maskFilter>] [-p <palette>] <shape> [-a] [-b] [-r] [-u] [-w]
 ```
 
 `shape`：形状类型
@@ -516,11 +516,11 @@ sidebar_position: 4
 
 **表达式**
 
-`Expression;\<expression\>` `Expr;\<expression\>`
+`Expression;<expression>` `Expr;<expression>`
 
 例如，此表达式将创建螺旋
 
-`//ezsc expr;x+=sin(2*pi*y)/2;z+=cos(2*pi*y)/2;x*x+z*z\<0.3^2`
+`//ezsc expr;x+=sin(2*pi*y)/2;z+=cos(2*pi*y)/2;x*x+z*z<0.3^2`
 :::
 `-s`（默认值：“20”）：定义要散点的形状的大小。可以为统一形状指定一种尺寸，也可以为 （X，Y，Z） 指定三种尺寸。
 
@@ -565,7 +565,7 @@ sidebar_position: 4
 
 ### 表面模糊
 ```bash
-//ezsu fuzzify \<radius> [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
+//ezsu fuzzify <radius> [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
 ```
 
 使用白噪声使表面看起来更模糊。
@@ -587,7 +587,7 @@ sidebar_position: 4
 
 ### 表面岩石化
 ```bash
-//ezsu rockify \<radius> [size] [oct] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
+//ezsu rockify <radius> [size] [oct] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
 ```
 
 使用柏林噪音使表面变得岩石。
@@ -613,7 +613,7 @@ sidebar_position: 4
 
 ### 表面 Voronoi 化
 ```bash
-//ezsu voronoify \<radius> [cell_size] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
+//ezsu voronoify <radius> [cell_size] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
 ```
 
 使用 Voronoi 噪声使曲面变形。
@@ -637,7 +637,7 @@ sidebar_position: 4
 
 ### 表面噪声化
 ```bash
-//ezsu noisify \<radius> \<noise> [scale] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
+//ezsu noisify <radius> <noise> [scale] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]
 ```
 
 使用噪点预设使曲面变形。
@@ -674,7 +674,7 @@ sidebar_position: 4
 
 ### 串珠样条
 ```bash
-//ezsp beads \<pattern> \<radii> [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp beads <pattern> <radii> [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域生成珠形样条。
@@ -695,7 +695,7 @@ sidebar_position: 4
 
 ### 链子样条
 ```bash
-//ezsp chainlink \<pattern> \<radii> [inner] [offset] [stretch] [spin] [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp chainlink <pattern> <radii> [inner] [offset] [stretch] [spin] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域生成链节形样条。
@@ -724,7 +724,7 @@ sidebar_position: 4
 
 ### 立方体样条
 ```bash
-//ezsp cubes \<pattern> \<radii> [gap] [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp cubes <pattern> <radii> [gap] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 从沿选定凸区域的立方体中生成样条曲线。
@@ -747,7 +747,7 @@ sidebar_position: 4
 
 ### 表达式样条
 ```bash
-//ezsp expression \<pattern> \<radii> [spin] \<expression> [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp expression <pattern> <radii> [spin] <expression> [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域生成由给定 WorldEdit 表达式形成的样条曲线。
@@ -771,12 +771,12 @@ sidebar_position: 4
 `-h`：显示帮助页面。
 
 表达式样条曲线示例：请注意，**表达式必须排在最后**
-`//ezsp expression red 20,5 0 -q 4 z^2+y^2\<2-x%2`
+`//ezsp expression red 20,5 0 -q 4 z^2+y^2<2-x%2`
 
 ### 渔网样条
 > 可以生成渔网袜
 ```bash
-//ezsp fishnet \<pattern> \<radii> [spacing] [depth] [width] [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp fishnet <pattern> <radii> [spacing] [depth] [width] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域生成渔网形样条。
@@ -803,7 +803,7 @@ sidebar_position: 4
 
 ### 噪声样条
 ```bash
-//ezsp noise \<pattern> \<radii> [strength] [stretch] [spin] \<noise> [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp noise <pattern> <radii> [strength] [stretch] [spin] <noise> [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域创建基于噪声的样条曲线。
@@ -832,7 +832,7 @@ sidebar_position: 4
 
 ### 震荡样条
 ```bash
-//ezsp oscillate \<pattern> \<radii> [depth] [interval] [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp oscillate <pattern> <radii> [depth] [interval] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域生成具有振荡厚度的样条曲线。
@@ -857,7 +857,7 @@ sidebar_position: 4
 
 ### 多边形样条
 ```bash
-//ezsp polygon \<pattern> \<radii> [sides] [spin] [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp polygon <pattern> <radii> [sides] [spin] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域创建正多边形样条。
@@ -882,7 +882,7 @@ sidebar_position: 4
 
 ### 绳索样条
 ```bash
-//ezsp rope \<pattern> \<radii> [ropeCount] [spin] [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp rope <pattern> <radii> [ropeCount] [spin] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域创建绳形样条。
@@ -907,7 +907,7 @@ sidebar_position: 4
 
 ### 圆柱样条
 ```bash
-//ezsp simple \<pattern> \<radii> [-p \<kb_parameters\>] [-q \<quality\>] [-n \<normalMode\>] [-g] [-h]
+//ezsp simple <pattern> <radii> [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]
 ```
 
 沿选定的凸区域创建简单的圆柱样条。

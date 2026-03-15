@@ -78,7 +78,7 @@ FAWE工具项通过`//wand`命令获得。
 
 ### Pos
 
-定义选择角的另一种方法是使用`//pos`命令。如果未指定参数，则位置将设置为您所在的坐标（图片所示）。或者，您可以使用`coordinates`参数明确定义坐标。该参数遵循此语法：`\<X\>,\<Y\>,\<Z\>`。对于所有三个坐标，可以使用一个值。
+定义选择角的另一种方法是使用`//pos`命令。如果未指定参数，则位置将设置为您所在的坐标（图片所示）。或者，您可以使用`coordinates`参数明确定义坐标。该参数遵循此语法：`<X>,<Y>,<Z>`。对于所有三个坐标，可以使用一个值。
 
 **用法：** `//pos1 [coordinates]` 和 `//pos2 [coordinates]`
 
@@ -104,12 +104,12 @@ FAWE工具项通过`//wand`命令获得。
 
 ### Chunk
 
-此命令将您的选择类型更改为`cuboid`选择类型，并选择给定[区块](https://minecraft.gamepedia.com/Chunk)中的所有块。默认情况下，将选择您当前位于的区块。
+此命令将您的选择类型更改为`cuboid`选择类型，并选择给定[区块](https://zh.minecraft.wiki/Chunk)中的所有块。默认情况下，将选择您当前位于的区块。
 
 或者，可以通过以下方式明确定义目标块：
 
 - 通过传递块的`x`和`z`坐标
-- 通过传递有效的[区块坐标](https://minecraft.gamepedia.com/Chunk#Finding_chunk_edges)并使用`-c`标志。
+- 通过传递有效的[区块坐标](https://zh.minecraft.wiki/Chunk#Finding_chunk_edges)并使用`-c`标志。
 
 `-s`标志允许您重新选择当前选择的所有块。
 
@@ -121,8 +121,8 @@ FAWE工具项通过`//wand`命令获得。
 
 次要：
 
-- `//chunk \<x,z block coordinates\>`
-- `//chunk \<x,z chunk coordinates> -c`
+- `//chunk <x,z block coordinates>`
+- `//chunk <x,z chunk coordinates> -c`
 - `//chunk -s`
 
 **权限：** `worldedit.selection.chunk`
@@ -139,11 +139,11 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//shift \<amount\>`
+`//shift <amount>`
 
 次要：
 
-`//shift \<amount> \<direction\>`
+`//shift <amount> <direction>`
 
 **示例：**
 
@@ -164,12 +164,12 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//inset \<amount\>`
+`//inset <amount>`
 
 次要：
 
-- `//inset \<amount> -h`
-- `//inset \<amount> -v`
+- `//inset <amount> -h`
+- `//inset <amount> -v`
 
 **示例：**
 
@@ -188,12 +188,12 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//outset \<amount\>`
+`//outset <amount>`
 
 次要：
 
-- `//outset \<amount> -h`
-- `//outset \<amount> -v`
+- `//outset <amount> -h`
+- `//outset <amount> -v`
 
 **示例：**
 
@@ -211,13 +211,13 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//contract \<amount\>`
+`//contract <amount>`
 
 次要：
 
-- `//contract \<amount> \<direction\>`
-- `//contract \<amount> \<reverse-amount\>`
-- `//contract \<amount> \<reverse-amount> \<direction\>`
+- `//contract <amount> <direction>`
+- `//contract <amount> <reverse-amount>`
+- `//contract <amount> <reverse-amount> <direction>`
 
 **示例：**
 
@@ -236,13 +236,13 @@ FAWE工具项通过`//wand`命令获得。
 
 主要：
 
-`//expand \<amount\>`
+`//expand <amount>`
 
 次要：
 
-- `//expand \<amount> \<direction\>`
-- `//expand \<amount> \<reverse-amount\>`
-- `//expand \<amount> \<reverse-amount> \<direction\>`
+- `//expand <amount> <direction>`
+- `//expand <amount> <reverse-amount>`
+- `//expand <amount> <reverse-amount> <direction>`
 - `//expand vert`
 
 **示例：**

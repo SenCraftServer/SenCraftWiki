@@ -13,23 +13,23 @@ sidebar_position: 9
 ### `#eznoise`
 
 ```bash
-#eznoisepattern[palette][noisePreset][\<scale\>][\<seed\>]
+#eznoisepattern[palette][noisePreset][<scale>][<seed>]
 ```bash
 
 别名：`#eznp`
 
 使用噪声预设值返回调色板块。它还具有以下内置预设：
 
-- `#ridged[palette][\<scale\>][\<seed\>]`
+- `#ridged[palette][<scale>][<seed>]`
 
-- `#smoothcells[palette][\<scale\>][\<seed\>]`
+- `#smoothcells[palette][<scale>][<seed>]`
 
-- `#voronoiedge[palette][\<scale\>][\<seed\>]`
+- `#voronoiedge[palette][<scale>][<seed>]`
 
 ### `#vectorgradient`
 
 ```bash
-#vectorgradientpattern[palette][vector][distance][\<noisePreset\>][\<noiseScale\>][\<noiseSeed\>]
+#vectorgradientpattern[palette][vector][distance][<noisePreset>][<noiseScale>][<noiseSeed>]
 ```bash
 
 别名：`#vgradientp`
@@ -39,11 +39,11 @@ sidebar_position: 9
 ### `#selection`
 
 ```bash
-#selection[selection][\<offset\>]
+#selection[selection][<offset>]
 ```bash
 
-速记：`#sel[selection][\<offset\>]`
+速记：`#sel[selection][<offset>]`
 
 将选区内容作为样式，类似 `#clipboard` 但是无需复制。
 
-可选变量，用于将模式偏移给定向量。`\<offset\>`
+可选变量，用于将模式偏移给定向量。`<offset>`

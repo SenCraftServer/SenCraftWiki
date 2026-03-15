@@ -11,7 +11,7 @@ sidebar_position: 5
 ## 流场
 
 ```bash
-//ezflowfield \<palette> \<lines> \<iterations> \<velocity> \<paletteScalar> \<noise> [-m \<source\>] [-h \<distributionMode\>] [-i \<inertia\>] [-g \<gravity\>] [-j \<jitter\>] [-b \<boundary\>] [-x \<xMod\>] [-y \<yMod\>] [-z \<zMod\>] [-p \<progression\>] [-s \<seed\>] [-c] [-f] [-t]
+//ezflowfield <palette> <lines> <iterations> <velocity> <paletteScalar> <noise> [-m <source>] [-h <distributionMode>] [-i <inertia>] [-g <gravity>] [-j <jitter>] [-b <boundary>] [-x <xMod>] [-y <yMod>] [-z <zMod>] [-p <progression>] [-s <seed>] [-c] [-f] [-t]
 ```
 
 别名：`//flow`
@@ -58,7 +58,7 @@ sidebar_position: 5
 ## 流线
 
 ```bash
-/ezflowline \<pattern> \<length> \<gravity> \<noise> [-i \<inertia\>] [-c \<convexSelPoints\>] [-s]
+/ezflowline <pattern> <length> <gravity> <noise> [-i <inertia>] [-c <convexSelPoints>] [-s]
 ```
 
 别名：`//flowline`

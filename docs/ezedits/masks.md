@@ -52,7 +52,7 @@ sidebar_position: 6
 ### 纹理蒙版
 
 ```bash
-#eznoisemask[noisePreset][\<scale\>][\<threshold\>][\<seed\>]
+#eznoisemask[noisePreset][<scale>][<threshold>][<seed>]
 #eznm
 ```bash
 使用纹理预设作为蒙版
@@ -62,7 +62,7 @@ sidebar_position: 6
 ### 向量渐变蒙版
 
 ```bash
-#vectorgradientmask[vector][distance][\<noisePreset\>][\<noiseScale\>][noiseSeed]
+#vectorgradientmask[vector][distance][<noisePreset>][<noiseScale>][noiseSeed]
 #vgradientm
 ```bash
 蒙版沿着给定距离长度的向量的方块。距离更近的方块更有可能通过蒙版检查。(兼容噪声预设）
@@ -70,7 +70,7 @@ sidebar_position: 6
 ### 毗邻蒙版
 
 ```bash
-#attached[\<vector,vector,vector ...\>]
+#attached[<vector,vector,vector ...>]
 ```bash
 
 至少与一个相邻的非空气方块连接的方块。
@@ -89,7 +89,7 @@ sidebar_position: 6
 ### 颜色组内蒙版
 
 严格：
-- `#palette[palette][\<strict\>]`
+- `#palette[palette][<strict>]`
 宽松：
 - `#fuzzypalette[palette]`
 - `#fpalette`

@@ -8,10 +8,11 @@ sidebar_position: 1
 
 ## 载具列表
 
-载具 | 命令 | 款式
---- | --- | ---
-自行车 | `/getbike \<bikeType\>` | `BLACK`, `ORANGE`, `RED`
-汽车 | `/getcar \<carType\>` | `BLACK`, `YELLOW`, `MAGENTA`
+| 载具  | 命令                    | 款式                           |
+|-----|-----------------------|------------------------------|
+| 自行车 | `/getbike <bikeType>` | `BLACK`, `ORANGE`, `RED`     |
+| 汽车  | `/getcar <carType>`   | `BLACK`, `YELLOW`, `MAGENTA` |
+
 ......
 
 ### 载具帮助注意事项

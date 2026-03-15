@@ -12,7 +12,7 @@ sidebar_position: 8
 
 印章方法示例。
 
-`/b gt`  `\<参数/info/info2\>`
+`/b gt`  `<参数/info/info2>`
 
 - `lt#`  - 树叶 *[数据值]*
   - 输入您想要在树上的叶子块类型的数据值；橡木(oak)是 "0" 或默认值，松树(pine)/云杉(spruce)是 "1"，白桦(birch)是 "2"，丛林树叶(jungle)是 "3"。

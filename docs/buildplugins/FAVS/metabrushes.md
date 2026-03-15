@@ -105,7 +105,7 @@ sidebar_position: 9
 
 ### Random Hydrosion Brush 随机水蚀笔刷
 
-- Command Syntax: `/b randhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] \<reverse> [MetaBrush Parameters]`
+- Command Syntax: `/b randhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] <reverse> [MetaBrush Parameters]`
 - Example: `/b randhydro droplets[10] radius[3] lifetime[150]`
 
 模拟随机水力侵蚀，从 `droplets` 设定的点开始，以 `lifetime` 的速度向下滚动。侵蚀强度取决于 `intensity` 值和侵蚀的 `radius` 。画笔大小将决定水滴开始的区域。4#参数将决定放置何种材料来模拟水滴路径底部的沉积物。 `blending` 参数将决定水滴被侵蚀后路径的平滑程度。这对于避免浮动块非常有用，而且可以让效果看起来更漂亮。将 `blending` 设置为 0将禁用它。将 `sediment` 设置为 none 将禁用沉积物放置。
@@ -114,7 +114,7 @@ sidebar_position: 9
 
 ### Maxima Hydrosion Brush 水蚀地形笔刷
 
-- Command Syntax: `/b maxhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] \<reverse> [MetaBrush Parameters]`
+- Command Syntax: `/b maxhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] <reverse> [MetaBrush Parameters]`
 - Example: `/b maxhydro droplets[10] radius[3] lifetime[150]`
 
 模拟水力侵蚀，从 `droplets` 设定的若干点开始，这些点位于刷子半径内的局部最大值处，从地形上向下滚动持续 `lifetime` 。侵蚀强度取决于 `intensity` 值和侵蚀的 `radius` `。刷子的大小将决定水滴可以开始的区域。sediment` 参数将决定放置何种材料来模拟水滴路径底部的沉积物。 `blending` 参数将决定水滴侵蚀后路径的平滑程度。这对于避免浮动块非常有用，而且可以让效果看起来更漂亮。将 `blending` 设置为 0 将禁用它。将 `sediment` 设置为 none 将禁用沉积物放置。 `spawnRadius` 参数将决定应使用多大的区域来确定某个位置是否是液滴放置的局部最大值。 `spawnRadius` 值越大，速度越慢，因此建议默认值为 2 或 3。
@@ -123,7 +123,7 @@ sidebar_position: 9
 
 ### Spread Hydrosion Brush 扩散水蚀笔刷
 
-- Command Syntax: `/b spreadhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] \<reverse> [MetaBrush Parameters]`
+- Command Syntax: `/b spreadhydro droplets[integer] radius[decimal] lifetime[integer] sediment[blockState] blending[decimal] <reverse> [MetaBrush Parameters]`
 - Example: `/b spreadhydro droplets[10] radius[3] lifetime[150]`
 
 模拟平均分布的水力侵蚀，从 `droplets` 设定的若干点开始，以 `lifetime` 的速度向下滚动。侵蚀强度取决于 `intensity` 值和侵蚀的 `radius` 。画笔大小将决定水滴开始的区域。4#参数将决定放置何种材料来模拟水滴路径底部的沉积物。 `blending` 参数将决定水滴被侵蚀后路径的平滑程度。这对于避免浮动块非常有用，而且可以让效果看起来更漂亮。将 `blending` 设置为 0 将禁用它。将 `sediment` 设置为 none 将禁用沉积物放置。

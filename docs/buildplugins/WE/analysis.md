@@ -8,7 +8,7 @@ sidebar_position: 5
 
 "命名二进制标签"（NBT）是Minecraft中用于以树结构存储数据的格式，由各种标签组成。
 
-有关NBT格式的更多信息，请参见[此处](https://minecraft.gamepedia.com/NBT_format)。
+有关NBT格式的更多信息，请参见[此处](https://zh.minecraft.wiki/NBT_format)。
 
 #### 用法
 
@@ -31,7 +31,7 @@ sidebar_position: 5
 
 - 另外两行显示区块文件的名称。
 
-有关区块文件格式的更多信息，请参见[此处](https://minecraft.gamepedia.com/Region_file_format)。
+有关区块文件格式的更多信息，请参见[此处](https://zh.minecraft.wiki/Region_file_format)。
 
 按下kbd:\[F3 + G\]键可查看区块边界。
 
@@ -68,7 +68,7 @@ sidebar_position: 5
 
 次要：
 
-`//distr [-c] [-d] [-p \<page\>]`
+`//distr [-c] [-d] [-p <page>]`
 
 #### 权限
 
@@ -90,7 +90,7 @@ sidebar_position: 5
 
 #### 用法
 
-`//count \<block\>`
+`//count <block>`
 
 #### 权限
 

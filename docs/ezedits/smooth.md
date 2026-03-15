@@ -7,7 +7,7 @@ sidebar_position: 11
 ## 光滑
 
 ```bash
-//ezsmooth \<radii> \<iterations> \<bias\>
+//ezsmooth <radii> <iterations> <bias>
 ```
 
 > 别名：`//ezsm`
@@ -23,7 +23,7 @@ sidebar_position: 11
 ## 膨胀
 
 ```bash
-//ezinflate \<radius\>
+//ezinflate <radius>
 ```
 
 > 别名：`//inflate`
@@ -35,7 +35,7 @@ sidebar_position: 11
 ## 裹紧
 
 ```bash
-//ezdeflate \<radius\>
+//ezdeflate <radius>
 ```
 
 > 别名：`//deflate`
@@ -47,7 +47,7 @@ sidebar_position: 11
 ## 次方块过渡
 
 ```bash
-//ezsmoothblocks \<radius> \<iterations> \<bias> [-s] [-t] [-w]
+//ezsmoothblocks <radius> <iterations> <bias> [-s] [-t] [-w]
 ```
 
 > 别名：`//smoothnlocks`

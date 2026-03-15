@@ -44,7 +44,7 @@ boolean pvp = plot.getFlag(PvpFlag.class);
 import com.plotsquared.core.plot.flag.FlagParseException;
 import com.plotsquared.core.plot.flag.PlotFlag;
 
-public class YourFlag extends PlotFlag\<YourValueType, YourFlag> {
+public class YourFlag extends PlotFlag<YourValueType, YourFlag> {
 // ...
 }
 ```bash
@@ -90,12 +90,12 @@ throw new FlagParseException(this, input, TranslatableCaption.of("flags.caption_
 }
 ```bash
 
-标题的创建方法与构造函数相同。在 message_en.json 文件中，有一些预制的错误标题，前缀为 `lags.flag_error_`。FlagParseException 可以接受进一步的参数，这些参数将替换标题中的占位符值（`+\<{value}\>+`），如果需要的话。
+标题的创建方法与构造函数相同。在 message_en.json 文件中，有一些预制的错误标题，前缀为 `lags.flag_error_`。FlagParseException 可以接受进一步的参数，这些参数将替换标题中的占位符值（`+<{value}>+`），如果需要的话。
 
 :::warning
 这个方法*永远*不应该返回 null。如果无法解析值，就抛出异常。
 :::
-merge 方法允许你合并两个不同的 Flags 实例，从而允许用户在 Flags 上使用 `/plot flag add \<flag> \<value\>` 命令。如果不支持合并，只需返回 `flagOf(newValue)`。
+merge 方法允许你合并两个不同的 Flags 实例，从而允许用户在 Flags 上使用 `/plot flag add <flag> <value>` 命令。如果不支持合并，只需返回 `flagOf(newValue)`。
 
 由于值是不可变的，可以（也鼓励）重复使用 Flags 实例。
 

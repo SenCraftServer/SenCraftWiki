@@ -50,7 +50,7 @@ sidebar_position: 10
 ### 选区自移
 
 ```bash
-//next \<direction> \<gap\>
+//next <direction> <gap>
 ```
 
 该命令根据指定方向将当前选区向其自身大小移动。`//next`
@@ -110,13 +110,13 @@ sidebar_position: 10
 `-g`：按类型对选区进行分组
 
 ```bash
-//ezselection load \<selection\>
+//ezselection load <selection>
 ```
 
 检索之前保存的选区。
 
 ```bash
-//ezselection \<selectionName> [-f]
+//ezselection <selectionName> [-f]
 ```
 
 保存选区
@@ -125,7 +125,7 @@ sidebar_position: 10
 `-f`：覆盖同名项
 
 ```bash
-//ezselection delete \<selectionName\>
+//ezselection delete <selectionName>
 ```
 
 删除具有给定名称的选区。

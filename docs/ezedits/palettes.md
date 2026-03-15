@@ -57,7 +57,7 @@ sidebar_position: 8
 ### 定义颜色组
 
 ```bash
-//ezpalette fetch \<fetchMode> \<paletteName> [length] [-d \<direction\>] [-f]
+//ezpalette fetch <fetchMode> <paletteName> [length] [-d <direction>] [-f]
 ```
 
 保存用户定义的颜色组并为其指定一个名称
@@ -82,7 +82,7 @@ sidebar_position: 8
 ### 删除颜色组
 
 ```bash
-//ezpalette delete \<paletteName\>
+//ezpalette delete <paletteName>
 ```
 
 删除与给定名称匹配的用户定义颜色组。
@@ -104,7 +104,7 @@ sidebar_position: 8
 ### 放置颜色组
 
 ```bash
-//ezpalette place \<palette> [direction]
+//ezpalette place <palette> [direction]
 ```
 
 将颜色组以一排方块的形式放置在给定方向。
@@ -113,7 +113,7 @@ sidebar_position: 8
 ### 交换色板
 
 ```bash
-//ezpalette swap \<sourcePalette> \<targetPalette> [-a] [-f]
+//ezpalette swap <sourcePalette> <targetPalette> [-a] [-f]
 ```
 
 区域操作，用源颜色组的方块与目标颜色组的方块交换。
@@ -125,7 +125,7 @@ sidebar_position: 8
 ### 在聊天栏打印颜色组
 
 ```bash
-//ezpalette print \<palette\>
+//ezpalette print <palette>
 ```
 
 在聊天中打印给定颜色组的方块。可以点击方块列表进行复制。
@@ -133,7 +133,7 @@ sidebar_position: 8
 ### 颜色组编码
 
 ```bash
-//ezpalette encode \<palette\>
+//ezpalette encode <palette>
 ```
 
 打印表示给定颜色组的编码字符串。单击字符串进行复制。
@@ -142,7 +142,7 @@ sidebar_position: 8
 ### 颜色组解码
 
 ```bash
-//ezpalette decode \<string\>
+//ezpalette decode <string>
 ```
 
 打印给定编码颜色组字符串的方块。可以点击方块列表进行复制。

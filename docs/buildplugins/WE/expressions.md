@@ -44,8 +44,8 @@ WorldEdit 表达式解析器的工作方式类似于 Java 及相关语言，但�
 
 | 运算符 | 说明   |
 |--------|--------|
-| `<\<`   | 左移   |
-| `\>>`   | 右移   |
+| `<<`   | 左移   |
+| `>>`   | 右移   |
 
 
 
@@ -66,8 +66,8 @@ WorldEdit 表达式解析器的工作方式类似于 Java 及相关语言，但�
 
 | 运算符 | 说明       |
 |--------|------------|
-| `\<`    | 小于       |
-| `\>`    | 大于       |
+| `<`    | 小于       |
+| `>`    | 大于       |
 | `<=`   | 小于或等于 |
 | `>=`   | 大于或等于 |
 | `==`   | 等于       |
@@ -131,7 +131,7 @@ WorldEdit 表达式解析器的工作方式类似于 Java 及相关语言，但�
 三元运算符用于以紧凑的方式表示条件表达式：
 
 ```
-\<condition> ? \<true-branch> : \<false-branch\>
+<condition> ? <true-branch> : <false-branch>
 ```
 
 它的工作方式与 if/else 语句完全相同，只不过分支只能是单一表达式。
@@ -252,18 +252,18 @@ WorldEdit 表达式解析器的工作方式类似于 Java 及相关语言，但�
 ### if/else
 
 ```java
-if (\<condition\>) \<true-branch\>
-if (\<condition\>) \<true-branch> else \<false-branch\>
+if (<condition>) <true-branch>
+if (<condition>) <true-branch> else <false-branch>
 ```
 
-* `\<condition\>` 被评估以决定执行哪个分支。
+* `<condition>` 被评估以决定执行哪个分支。
 * 大于零的值解释为 true，其他值解释为 false。
-* `\<true-code\>` 和 `\<false-code\>` 可以是用分号分隔的单个语句或代码块语句。
+* `<true-code>` 和 `<false-code>` 可以是用分号分隔的单个语句或代码块语句。
 
 **注意：** else 关键字总是与最后一个 if 关联。这允许像这样构造 elseif：
 
 ```java
-if (\<condition 1\>) \<true-code 1> else if (\<condition 2\>) \<true-code 2> else \<false-code\>
+if (<condition 1>) <true-code 1> else if (<condition 2>) <true-code 2> else <false-code>
 ```
 
 
@@ -277,12 +277,12 @@ if (\<condition 1\>) \<true-code 1> else if (\<condition 2\>) \<true-code 2> els
 #### while
 
 ```java
-while (\<condition\>) \<body\>
-do \<body> while (\<condition\>);
+while (<condition>) <body>
+do <body> while (<condition>);
 ```
 
-* `\<condition\>` 被评估以决定是否继续循环。
-* `\<body\>` 可以是用分号分隔的单个语句或代码块语句。
+* `<condition>` 被评估以决定是否继续循环。
+* `<body>` 可以是用分号分隔的单个语句或代码块语句。
 * do-while 在执行主体后检查条件。
 
 
@@ -290,39 +290,39 @@ do \<body> while (\<condition\>);
 #### Java/C 风格的 for
 
 ```java
-for (\<init\>; \<condition\>; \<increment\>) \<body\>
+for (<init>; <condition>; <increment>) <body>
 ```
 
-* `\<init\>`、`\<condition\>` 和 `\<increment\>` 是单个表达式。
-* `\<body\>` 可以是用分号分隔的单个语句或代码块语句。
+* `<init>`、`<condition>` 和 `<increment>` 是单个表达式。
+* `<body>` 可以是用分号分隔的单个语句或代码块语句。
 
 **执行步骤**
 
-首先，`\<init\>` 只会评估一次，然后每次迭代按以下步骤进行：
+首先，`<init>` 只会评估一次，然后每次迭代按以下步骤进行：
 
-1. 如果 `\<condition\>` 的评估结果小于或等于零（即为 false），则循环终止。
-2. 执行 `\<body\>`。
-3. 执行 `\<increment\>`。
+1. 如果 `<condition>` 的评估结果小于或等于零（即为 false），则循环终止。
+2. 执行 `<body>`。
+3. 执行 `<increment>`。
 
 
 
 #### 简单 for
 
 ```java
-for (\<counter> = \<first\>, \<last\>) \<body\>
+for (<counter> = <first>, <last>) <body>
 ```
 
-* `\<counter\>` 是一个用于计数迭代的变量。
-* `\<first\>` 和 `\<last\>` 是单个表达式。
-* `\<body\>` 可以是用分号分隔的单个语句或代码块语句。
+* `<counter>` 是一个用于计数迭代的变量。
+* `<first>` 和 `<last>` 是单个表达式。
+* `<body>` 可以是用分号分隔的单个语句或代码块语句。
 
 **执行步骤**
 
-首先，内部计数器被设置为 `\<first\>`。然后，每次迭代按以下步骤进行：
+首先，内部计数器被设置为 `<first>`。然后，每次迭代按以下步骤进行：
 
-1. 如果内部计数器超过 `\<last\>`，则循环终止。
-2. `\<counter\>` 被设置为内部计数器。
-3. 执行 `\<body\>`。
+1. 如果内部计数器超过 `<last>`，则循环终止。
+2. `<counter>` 被设置为内部计数器。
+3. 执行 `<body>`。
 4. 内部计数器增加 1.0。
 
-`\<first\>` 和 `\<last\>` 仅评估一次。
+`<first>` 和 `<last>` 仅评估一次。

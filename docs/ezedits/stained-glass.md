@@ -9,7 +9,7 @@ sidebar_position: 12
 ## 玻璃渐变
 
 ```bash
-//ezstainedglassgradient \<startColor> [endColor] \<layers> [length] [quality] [direction] [-c \<backgroundColor\>] [-bs]
+//ezstainedglassgradient <startColor> [endColor] <layers> [length] [quality] [direction] [-c <backgroundColor>] [-bs]
 ```
 
 别名: `//stainedglassgradient`, `//glassgradient`

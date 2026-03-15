@@ -7,7 +7,7 @@ sidebar_position: 1
 为了优化玩家们的游玩体验、增加游玩可玩性，我们为服务器制作了诸多功能
 
 包括但不限于：
-- [快速调音](Tuna/index.md)
+- [快速调音](blocktuner/index.md)
 - [地图画生成器](Imgmap/index.md)
 
 :::danger[注意]   

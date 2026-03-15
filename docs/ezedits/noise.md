@@ -136,8 +136,8 @@ ezEdits 中的噪声基于 FastNoiseLite 的修改版本，因此我们强烈推
 |                                 | **如果未选择分形类型：**                                                       |
 |                                 | - None：无                                                                     |
 | **Octaves (Oct)**               | 设置要使用的分形噪声的层数。                                                   |
-| **Lacunarity (Lac)**            | 设置每个分形层的比例。值 > 1 将有效增加每层的频率，值 \< 1 将有效降低每层的频率。 |
-| **Gain**                        | 设置每个分形层的相对强度。值 \< 1 将降低每一层的强度，值 \>1 将增加。             |
+| **Lacunarity (Lac)**            | 设置每个分形层的比例。值 > 1 将有效增加每层的频率，值 < 1 将有效降低每层的频率。 |
+| **Gain**                        | 设置每个分形层的相对强度。值 < 1 将降低每一层的强度，值 >1 将增加。             |
 | **WeightedStrength (Weighted)** | 设置每层强度对噪声值的响应能力。                                               |
 
 ### [**域扭曲**](https://iquilezles.org/articles/warp/)参数
@@ -182,21 +182,21 @@ ezEdits 中的噪声基于 FastNoiseLite 的修改版本，因此我们强烈推
 `MINE`：列出所有自定义的预设
 
 ```bash
-//eznoise save \<presetName> \<noise> [-f]
+//eznoise save <presetName> <noise> [-f]
 ```
 
 保存自定义的预设， `-f` 覆盖同名预设。
 
 
 ```bash
-//eznoise delete \<presetName\>
+//eznoise delete <presetName>
 ```
 
 删除指定自定义预设。
 
 
 ```bash
-//eznoise print \<noise\>
+//eznoise print <noise>
 ```
 
 在聊天栏中打印预设。

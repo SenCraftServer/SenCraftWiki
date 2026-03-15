@@ -6,13 +6,13 @@ sidebar_position: 6
 
 ### 生物群系列表
 
-了解有关生物群系的更多信息，请查看[此处](https://minecraft.gamepedia.com/Biome)。
+了解有关生物群系的更多信息，请查看[此处](https://zh.minecraft.wiki/Biome)。
 
 获取 Bukkit 中所有可用生物群系的列表。
 
 ### 用法
 
-`//biomelist [-p \<page\>]`
+`//biomelist [-p <page>]`
 
 ### 权限
 
@@ -31,7 +31,7 @@ sidebar_position: 6
 
 - 如果指定了 `-p` 标志，该命令将显示您当前所在区块的生物群系（图片2）。
 
-- 如果指定了 `-t` 标志，将显示您[crosshair](https://minecraft.gamepedia.com/File:HUD_example.png)中目标方块的生物群系（图片3）。
+- 如果指定了 `-t` 标志，将显示您[crosshair](https://zh.minecraft.wiki/File:HUD_example.png)中目标方块的生物群系（图片3）。
 
 在1.16版本之前，生物群系与Y轴无关。从1.16版本开始，生物群系现在在4x4x4的区块中定义。关于新格式的更多（相当技术性的）信息可以在[这里](https://wiki.vg/Protocol#Chunk_Data)找到。
 
@@ -63,7 +63,7 @@ sidebar_position: 6
 
 ### 用法
 
-`//setbiome \<biome> [-p]`
+`//setbiome <biome> [-p]`
 
 ### 权限
 
