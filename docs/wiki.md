@@ -61,8 +61,8 @@ mcbe.sencraft.top
 
 为了建筑师的极致体验，我们针对服务器进行了大量优化，并且上线了诸多建筑插件，包括但**不限于**：
 
-- `WorldEdit`
-- `Arceon`
+- [WorldEdit](build-new/we/start)
+- [Arceon](build-new/arceon/home)
 - `GoBrush`
 - `GoPaint`
 - `FAVS`

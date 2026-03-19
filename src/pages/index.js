@@ -56,16 +56,32 @@ function TerminalWindow() {
   );
 }
 
+function FloatingShapes() {
+  return (
+    <div className={styles.floatingShapes}>
+      <div className={clsx(styles.floatingShape, styles.shape1)}></div>
+      <div className={clsx(styles.floatingShape, styles.shape2)}></div>
+      <div className={clsx(styles.floatingShape, styles.shape3)}></div>
+      <div className={clsx(styles.floatingShape, styles.shape4)}></div>
+    </div>
+  );
+}
+
 function HomepageHero() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className={styles.heroSection}>
+      <FloatingShapes />
       <div className={styles.heroContainer}>
         <div className={styles.heroLeft}>
           <h1 className={styles.heroTitle}>
             <span className={styles.heroTitleBlack}>在这里，</span>
             <br />
-            <span className={styles.heroTitleGreen}>遇见属于你的净土。</span>
+            <span 
+              className={styles.heroTitleGreen}
+              data-text="遇见属于你的净土。">
+              遇见属于你的净土。
+            </span>
           </h1>
           <p className={styles.heroDescription}>
             SenCraft森世界<br />
@@ -80,7 +96,7 @@ function HomepageHero() {
             </Link>
             <Link
               className={clsx('button', styles.buttonSecondary)}
-              to="/docs/join/getting-started">
+              to="/docs/join/get-started">
               开始游戏
             </Link>
           </div>

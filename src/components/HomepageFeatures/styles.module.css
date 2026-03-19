@@ -1,11 +1,397 @@
+/**
+ * Homepage Features Component Styles
+ * 现代化特性卡片设计
+ */
+
+/* 特性区域容器 */
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 4rem 0;
   width: 100%;
+  position: relative;
 }
 
+/* 特性卡片 */
+.featureCard {
+  position: relative;
+  height: 100%;
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  box-shadow: var(--shadow-md);
+  transition: 
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+  overflow: hidden;
+}
+
+/* 卡片背景装饰 */
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+/* 卡片悬停效果 */
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+  border-color: var(--color-primary-400);
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+/* 深色模式卡片样式 */
+[data-theme='dark'] .featureCard {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.9) 0%,
+    rgba(30, 41, 59, 0.7) 100%
+  );
+  border-color: rgba(74, 222, 128, 0.2);
+  box-shadow: 
+    var(--shadow-md),
+    0 0 20px rgba(74, 222, 128, 0.05);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  border-color: var(--color-primary-400);
+  box-shadow: 
+    var(--shadow-2xl),
+    0 0 30px rgba(74, 222, 128, 0.1);
+}
+
+[data-theme='dark'] .featureCard::before {
+  background: linear-gradient(90deg, 
+    rgba(74, 222, 128, 0.8), 
+    rgba(34, 211, 238, 0.8));
+}
+
+/* 深色模式图标容器发光效果 */
+[data-theme='dark'] .iconContainer {
+  box-shadow: 
+    0 4px 14px rgba(74, 222, 128, 0.3),
+    0 0 20px rgba(74, 222, 128, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='dark'] .featureCard:hover .iconContainer {
+  box-shadow: 
+    0 8px 20px rgba(74, 222, 128, 0.4),
+    0 0 30px rgba(74, 222, 128, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 图标容器 */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  box-shadow: 
+    0 4px 14px rgba(16, 185, 129, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: 
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* 图标悬停效果 */
+.featureCard:hover .iconContainer {
+  transform: scale(1.1);
+  box-shadow: 
+    0 8px 20px rgba(16, 185, 129, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* SVG 图标 */
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  width: 48px;
+  height: 48px;
+  fill: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* 特性标题 */
+.featureTitle {
+  font-family: var(--font-family-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-primary-700);
+  text-align: center;
+  transition: color var(--transition-fast);
+}
+
+[data-theme='dark'] .featureTitle {
+  color: var(--color-primary-400);
+}
+
+.featureCard:hover .featureTitle {
+  color: var(--color-primary-600);
+}
+
+[data-theme='dark'] .featureCard:hover .featureTitle {
+  color: var(--color-primary-300);
+}
+
+/* 特性描述 */
+.featureDescription {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ifm-font-color-base);
+  text-align: center;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* 响应式布局 */
+
+/* 大桌面设备 (1201px+) */
+@media screen and (min-width: 1201px) {
+  .features {
+    padding: 5rem 0;
+  }
+
+  .featureCard {
+    padding: 2.5rem;
+  }
+
+  .iconContainer {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 1.75rem;
+  }
+
+  .featureSvg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .featureTitle {
+    font-size: 1.625rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .featureDescription {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+}
+
+/* 小桌面设备 (997px - 1200px) */
+@media screen and (min-width: 997px) and (max-width: 1200px) {
+  .features {
+    padding: 4rem 0;
+  }
+
+  .featureCard {
+    padding: 2rem;
+  }
+
+  .iconContainer {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 1.5rem;
+  }
+
+  .featureSvg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .featureTitle {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* 平板设备 (769px - 996px) */
+@media screen and (min-width: 769px) and (max-width: 996px) {
+  .features {
+    padding: 3.5rem 0;
+  }
+
+  .featureCard {
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .iconContainer {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.25rem;
+  }
+
+  .featureSvg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .featureTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .featureDescription {
+    font-size: 0.9375rem;
+  }
+}
+
+/* 大手机设备 (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .features {
+    padding: 3rem 0;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .iconContainer {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+  }
+
+  .featureSvg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .featureTitle {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .featureDescription {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  /* 卡片悬停效果在移动端减弱 */
+  .featureCard:hover {
+    transform: translateY(-4px);
+  }
+
+  .featureCard:hover .iconContainer {
+    transform: scale(1.05);
+  }
+}
+
+/* 小手机设备 (320px - 480px) */
+@media screen and (max-width: 480px) {
+  .features {
+    padding: 2.5rem 0;
+  }
+
+  .featureCard {
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .iconContainer {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 0.875rem;
+  }
+
+  .featureSvg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .featureTitle {
+    font-size: 1rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .featureDescription {
+    font-size: 0.8125rem;
+    line-height: 1.65;
+  }
+
+  /* 禁用移动端悬停效果 */
+  .featureCard:hover {
+    transform: none;
+  }
+
+  .featureCard:hover::before {
+    opacity: 0;
+  }
+
+  .featureCard:hover .iconContainer {
+    transform: none;
+  }
+
+  /* 禁用移动端动画 */
+  .featureCard {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* 动画入场效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.featureCard {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.featureCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.featureCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.featureCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* 减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .featureCard {
+    animation: none;
+    opacity: 1;
+  }
+
+  .featureCard:hover {
+    transform: none;
+  }
+
+  .featureCard:hover .iconContainer {
+    transform: none;
+  }
 }
