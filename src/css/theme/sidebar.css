@@ -1,0 +1,288 @@
+/**
+ * SenCraftWiki · 主题层：文档侧边栏、目录、面包屑、分页
+ *
+ * 扁平化：用底色与文字色表达状态，去掉渐变竖条、圆点与位移反馈。
+ */
+
+/* ---------- 侧边栏容器 ---------- */
+/*
+ * 侧栏独立成一层：底色比正文深一档，右侧落一条 1px 分隔线。
+ * 浅色用 gray-100、深色压到最暗，两侧都能看出两栏结构。
+ */
+.theme-doc-sidebar-container {
+  background: var(--surface-sidebar);
+  border-right: 1px solid var(--border-subtle);
+}
+
+/* 侧栏略收窄，把宽度让给正文，减少右侧大片空白 */
+@media (min-width: 997px) {
+  :root {
+    --doc-sidebar-width: 280px;
+  }
+
+  /* 正文与分界线之间留出呼吸区，避免文字贴着侧栏 */
+  [class*='docItemCol'] {
+    padding-left: var(--space-6);
+  }
+}
+
+/*
+ * 宽屏下给右侧目录一条栏线，三栏层次才完整。
+ * 线画在目录列上（不是目录自身），才能随内容区高度贯穿。
+ */
+@media (min-width: 1200px) {
+  .row > .col--3:has(> .theme-doc-toc-desktop) {
+    padding-left: var(--space-4);
+    border-left: 1px solid var(--border-subtle);
+  }
+}
+
+.theme-doc-sidebar-menu {
+  padding: var(--space-4) var(--space-3);
+}
+
+/* ---------- 菜单 ---------- */
+.menu {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+}
+
+.menu__list {
+  padding-left: 0;
+}
+
+.menu__list-item {
+  margin: 2px 0;
+}
+
+/* 嵌套分组：一条 1px 引导线代替缩进色块 */
+.menu__list .menu__list {
+  margin-left: var(--space-2);
+  padding-left: var(--space-3);
+  border-left: 1px solid var(--border-subtle);
+}
+
+.menu__link {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-body);
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.menu__link:hover {
+  color: var(--text-brand);
+  background: var(--tint-hover);
+}
+
+/* 提高特异性：Infima 用 :not(.menu__link--sublist) 限定，普通类名压不住 */
+.menu__link--active:not(.menu__link--sublist),
+.menu__link--active:not(.menu__link--sublist):hover {
+  color: var(--text-brand);
+  font-weight: var(--weight-semibold);
+  background-color: var(--tint-active);
+}
+
+/* 所属分类只做颜色与字重提示，不铺底色（避免与子项色块叠加） */
+.menu__link--sublist.menu__link--active {
+  color: var(--text-brand);
+  font-weight: var(--weight-semibold);
+}
+
+.menu__link--sublist {
+  font-weight: var(--weight-medium);
+}
+
+.menu__caret {
+  border-radius: var(--radius-xs);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.menu__caret::before {
+  background-size: 1.25rem 1.25rem;
+  opacity: 0.6;
+}
+
+/* ---------- 右侧目录 ---------- */
+/* 官方组件容器只有 module 类，用稳定类 theme-doc-toc-desktop 落字号与内距 */
+.theme-doc-toc-desktop {
+  padding: var(--space-4) 0;
+  font-size: var(--text-sm);
+}
+
+/* 桌面目录补一个与侧栏一致的栏目标题，避免右侧悬空一列链接 */
+.theme-doc-toc-desktop::before {
+  display: block;
+  padding: var(--space-4) 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  content: '本页目录';
+}
+
+.table-of-contents__link {
+  display: block;
+  padding: var(--space-1) var(--space-3);
+  color: var(--text-muted);
+  border-left: 2px solid transparent;
+  transition: color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.table-of-contents__link:hover {
+  color: var(--text-body);
+  border-left-color: var(--border-strong);
+  text-decoration: none;
+}
+
+.table-of-contents__link--active {
+  color: var(--text-brand);
+  font-weight: var(--weight-semibold);
+  border-left-color: var(--brand);
+}
+
+.table-of-contents__link--active:hover {
+  color: var(--text-brand);
+  border-left-color: var(--brand);
+}
+
+/* 窄桌面下 25% 只有 ~150px，会把标题挤成两行；换成固定宽度更稳 */
+@media (min-width: 997px) and (max-width: 1199px) {
+  .row > .col--3:has(> .theme-doc-toc-desktop) {
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+}
+
+/* ---------- 面包屑 ---------- */
+.breadcrumbs__item:not(:last-child)::after {
+  color: var(--text-faint);
+}
+
+.breadcrumbs__link {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  border-radius: var(--radius-xs);
+  transition: color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.breadcrumbs__link:hover {
+  color: var(--text-brand);
+  background: var(--tint-hover);
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: var(--text-body);
+  font-weight: var(--weight-medium);
+  background: transparent;
+}
+
+/* ---------- 上一篇 / 下一篇 ---------- */
+.pagination-nav {
+  margin-top: var(--space-7);
+  gap: var(--space-4);
+}
+
+.pagination-nav__link {
+  padding: var(--space-4);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.pagination-nav__link:hover {
+  background: var(--surface-sunken);
+  border-color: var(--border-strong);
+}
+
+.pagination-nav__sublabel {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.pagination-nav__label {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-strong);
+}
+
+/* ---------- 文档页脚（编辑 / 最后更新） ---------- */
+.theme-doc-footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.theme-doc-footer-edit-meta-row,
+.theme-last-updated {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.theme-edit-this-page {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--weight-medium);
+  color: var(--text-brand);
+}
+
+.theme-edit-this-page:hover {
+  color: var(--text-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 移动端文档侧边栏 ---------- */
+@media (max-width: 996px) {
+  /* 移动端改用右下角浮窗目录，隐藏原生侧边栏避免重复 */
+  .theme-doc-sidebar-container {
+    display: none;
+  }
+
+  .theme-doc-sidebar-menu {
+    max-height: calc(100vh - var(--navbar-height));
+    padding: var(--space-3);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 遮罩层（哈希类名用子串匹配，避免绑定构建产物） */
+  [class*='backdrop'] {
+    background: var(--surface-scrim);
+  }
+
+  .menu__link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .theme-doc-toc-mobile {
+    margin-bottom: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-nav__link {
+    padding: var(--space-3);
+  }
+
+  .pagination-nav__label {
+    font-size: var(--text-sm);
+  }
+
+  .theme-doc-toc-desktop {
+    padding: var(--space-3) 0;
+  }
+}

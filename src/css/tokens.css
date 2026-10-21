@@ -1,0 +1,422 @@
+/**
+ * SenCraftWiki · 设计令牌
+ *
+ * 单一事实来源：颜色、排版、间距、圆角、阴影、动效。
+ * 组件层只允许使用语义令牌（--surface / --text / --border / --brand），
+ * 深色模式仅在本文件末尾覆盖语义值，不允许在别处散落 [data-theme='dark']。
+ *
+ * 视觉基调：扁平化。实色表面、1px 描边分层、单一品牌绿作强调；
+ * 不使用渐变填充、毛玻璃、彩色投影与无限装饰动画。
+ */
+
+:root {
+  /* ---------- 品牌色阶 ---------- */
+  --brand-50: #f0fdf4;
+  --brand-100: #dcfce7;
+  --brand-200: #bbf7d0;
+  --brand-300: #86efac;
+  --brand-400: #4ade80;
+  --brand-500: #22c55e;
+  --brand-600: #16a34a;
+  --brand-700: #15803d;
+  --brand-800: #166534;
+  --brand-900: #14532d;
+  --brand-950: #052e16;
+
+  --cyan-50: #ecfeff;
+  --cyan-100: #cffafe;
+  --cyan-200: #a5f3fc;
+  --cyan-300: #67e8f9;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --cyan-600: #0891b2;
+  --cyan-700: #0e7490;
+  --cyan-800: #155e75;
+  --cyan-900: #164e63;
+
+  --amber-50: #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-300: #fcd34d;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+
+  --red-50: #fef2f2;
+  --red-100: #fee2e2;
+  --red-300: #fca5a5;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+
+  /* ---------- 语义表面 ---------- */
+  --surface-page: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-sunken: var(--gray-50);
+  --surface-tint: var(--brand-50);
+  --surface-inverse: #0b0f14;
+  /* 文档侧栏：比 sunken 再深一档，靠底色差把左栏与正文区分开 */
+  --surface-sidebar: var(--gray-100);
+
+  /* ---------- 语义文本 ----------
+     品牌文字取 brand-700：白底对比度 5.0:1，满足 AA 正文要求。 */
+  --text-strong: var(--gray-900);
+  --text-body: var(--gray-700);
+  --text-muted: var(--gray-500);
+  --text-faint: var(--gray-400);
+  --text-brand: var(--brand-700);
+  --text-code: #1a1a1a;
+
+  /* ---------- 语义描边 ---------- */
+  --border-subtle: var(--gray-200);
+  --border-default: var(--gray-200);
+  --border-strong: var(--gray-300);
+  --border-brand: var(--brand-500);
+
+  /* ---------- 品牌 ----------
+     扁平化：只用实色填充，不使用渐变与彩色投影。
+     --brand 用于装饰描边，--brand-solid 用于实心按钮底面（白字 5.0:1）。 */
+  --brand: var(--brand-500);
+  --accent: var(--cyan-500);
+  --brand-solid: var(--brand-700);
+  --brand-solid-hover: var(--brand-800);
+
+  /* ---------- 品牌叠层：悬停 / 选中 / 强调 ----------
+     组件层只需引用这些令牌，深浅色差异一律在此收敛。 */
+  --tint-subtle: rgba(34, 197, 94, 0.04);
+  --tint-hover: rgba(34, 197, 94, 0.06);
+  --tint-active: rgba(34, 197, 94, 0.1);
+  --tint-strong: rgba(34, 197, 94, 0.12);
+  --tint-border: rgba(34, 197, 94, 0.24);
+  --tint-selection: rgba(34, 197, 94, 0.22);
+  --tint-glow: rgba(34, 197, 94, 0.08);
+
+  /* ---------- 代码块（随主题翻转：浅色浅底深字，深色深底浅字） ---------- */
+  --code-surface: var(--gray-100);
+  --code-text: var(--gray-900);
+  --code-border: var(--gray-200);
+  --code-header: var(--gray-100);
+  --code-header-border: var(--gray-200);
+  --code-muted: var(--gray-500);
+  --code-raised: rgba(0, 0, 0, 0.05);
+
+  /* 行内代码：与代码块同族的中性底，淡绿在白底上几乎不可见 */
+  --code-inline-bg: var(--gray-100);
+  --code-inline-border: var(--gray-200);
+
+  /* ---------- 遮罩与反色文字 ---------- */
+  --surface-scrim: rgba(3, 7, 18, 0.5);
+  --text-on-brand: #ffffff;
+
+  /* ---------- 次级按钮：描边式，背景取表面色 ---------- */
+  --btn-secondary-bg: var(--surface-raised);
+  --btn-secondary-bg-hover: var(--surface-sunken);
+  --btn-secondary-border: var(--border-strong);
+  --btn-secondary-border-hover: var(--gray-400);
+
+  /* ---------- 提示框语义色 ---------- */
+  --alert-neutral-bg: var(--gray-50);
+  --alert-neutral-accent: var(--gray-400);
+  --alert-neutral-text: var(--gray-700);
+
+  /* info 只保留蓝色强调条，底色走中性灰，避免整页出现大面积冷色块 */
+  --alert-info-bg: var(--gray-50);
+  --alert-info-accent: var(--blue-500);
+  --alert-info-text: var(--gray-800);
+
+  --alert-success-bg: var(--brand-50);
+  --alert-success-accent: var(--brand-500);
+  --alert-success-text: var(--brand-700);
+
+  --alert-warning-bg: var(--amber-50);
+  --alert-warning-accent: var(--amber-500);
+  --alert-warning-text: var(--amber-700);
+
+  --alert-danger-bg: var(--red-50);
+  --alert-danger-accent: var(--red-500);
+  --alert-danger-text: var(--red-700);
+
+  /* ---------- 排版 ---------- */
+  --font-display: 'Space Grotesk', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.06em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---------- 间距 ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* ---------- 圆角（扁平化：收敛到 4 / 6 / 8 / 12，去掉超大圆角） ---------- */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-pill: 9999px;
+
+  /* ---------- 阴影（扁平化：只用于浮层，静态元素靠 1px 描边分层） ---------- */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 24px -8px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 40px -12px rgba(0, 0, 0, 0.16);
+  --shadow-focus: 0 0 0 3px var(--tint-active);
+
+  /* ---------- 动效 ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 380ms;
+
+  /* ---------- 层级 ---------- */
+  --z-navbar: 200;
+  --z-overlay: 300;
+  --z-float: 400;
+
+  /* ---------- 布局 ---------- */
+  --navbar-height: 4rem;
+  --content-max: 820px;
+  --shell-max: 1400px;
+
+  /* ==========================================================
+     Infima 变量映射
+     ========================================================== */
+  --ifm-color-primary: var(--brand-700);
+  --ifm-color-primary-dark: var(--brand-800);
+  --ifm-color-primary-darker: var(--brand-900);
+  --ifm-color-primary-darkest: var(--brand-950);
+  --ifm-color-primary-light: var(--brand-600);
+  --ifm-color-primary-lighter: var(--brand-500);
+  --ifm-color-primary-lightest: var(--brand-300);
+
+  --ifm-font-family-base: var(--font-body);
+  --ifm-font-family-monospace: var(--font-mono);
+  --ifm-heading-font-family: var(--font-display);
+  --ifm-font-size-base: var(--text-base);
+  --ifm-line-height-base: var(--leading-relaxed);
+  --ifm-code-font-size: 95%;
+
+  --ifm-background-color: var(--surface-page);
+  --ifm-background-surface-color: var(--surface-raised);
+  --ifm-font-color-base: var(--text-body);
+  --ifm-heading-color: var(--text-strong);
+  --ifm-link-color: var(--brand-700);
+  --ifm-link-hover-color: var(--brand-800);
+  --ifm-border-color: var(--border-default);
+  /* 侧栏右边界由该变量落笔，主题默认透明会吃掉分隔线 */
+  --ifm-toc-border-color: var(--border-subtle);
+  --ifm-global-radius: var(--radius-sm);
+  --ifm-global-shadow-lw: var(--shadow-xs);
+  --ifm-global-shadow-md: var(--shadow-sm);
+  --ifm-global-shadow-tl: var(--shadow-lg);
+  --ifm-card-border-radius: var(--radius-lg);
+  --ifm-button-border-radius: var(--radius-sm);
+  --ifm-alert-border-radius: var(--radius-md);
+  --ifm-alert-border-left-width: 3px;
+  --ifm-alert-shadow: none;
+  --ifm-hover-overlay: var(--tint-hover);
+
+  --ifm-navbar-height: var(--navbar-height);
+  --ifm-navbar-background-color: var(--surface-page);
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-link-color: var(--text-body);
+  --ifm-navbar-link-hover-color: var(--brand-700);
+
+  --ifm-footer-background-color: var(--surface-sunken);
+  --ifm-footer-color: var(--text-body);
+  --ifm-footer-link-color: var(--text-muted);
+  --ifm-footer-link-hover-color: var(--brand-700);
+  --ifm-footer-title-color: var(--brand-700);
+  --ifm-footer-padding-vertical: 3rem;
+
+  --ifm-tabs-color-active: var(--brand-700);
+  --ifm-tabs-color-active-border: var(--brand-500);
+  --ifm-menu-color: var(--text-body);
+  --ifm-menu-color-active: var(--brand-700);
+  --ifm-menu-color-background-active: var(--tint-active);
+  --ifm-menu-color-background-hover: var(--tint-hover);
+
+  --ifm-code-background: var(--tint-strong);
+  --ifm-pre-background: var(--code-surface);
+  --ifm-pre-color: var(--code-text);
+  --ifm-table-head-background: var(--gray-100);
+  --ifm-table-border-color: var(--border-strong);
+  --ifm-blockquote-color: var(--text-body);
+  --ifm-blockquote-border-color: var(--brand-500);
+
+  --docusaurus-highlighted-code-line-bg: var(--tint-active);
+  --ifm-scrollbar-track-background-color: transparent;
+  --ifm-scrollbar-thumb-background-color: var(--gray-300);
+}
+
+/* ==========================================================
+   深色模式：只覆盖语义令牌
+   ========================================================== */
+[data-theme='dark'] {
+  --surface-page: #0d1117;
+  --surface-raised: #161b22;
+  --surface-sunken: #010409;
+  --surface-tint: rgba(74, 222, 128, 0.08);
+  --surface-inverse: #f0f6fc;
+  /* 深色下侧栏压到最暗一层，正文保持 #0d1117 */
+  --surface-sidebar: #010409;
+
+  --text-strong: #f0f6fc;
+  --text-body: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-faint: #6e7681;
+  --text-brand: var(--brand-400);
+  --text-code: #f0f0f0;
+
+  --border-subtle: #21262d;
+  --border-default: #30363d;
+  --border-strong: #3d444d;
+
+  --brand: var(--brand-400);
+  --brand-solid: var(--brand-400);
+  --brand-solid-hover: var(--brand-300);
+  /* 亮绿底配深色文字，深色下实心按钮才够对比度 */
+  --text-on-brand: #06210f;
+
+  /* 深色底遮罩需更重，否则抽屉与页面层次分不开 */
+  --surface-scrim: rgba(1, 4, 9, 0.66);
+
+  --tint-subtle: rgba(74, 222, 128, 0.05);
+  --tint-hover: rgba(74, 222, 128, 0.08);
+  --tint-active: rgba(74, 222, 128, 0.14);
+  --tint-strong: rgba(74, 222, 128, 0.16);
+  --tint-border: rgba(74, 222, 128, 0.3);
+  --tint-selection: rgba(74, 222, 128, 0.24);
+  --tint-glow: rgba(74, 222, 128, 0.1);
+
+  /* ---------- 代码块：机身比页面略亮，避免整块纯黑 ---------- */
+  --code-surface: #161b22;
+  --code-text: #e6edf3;
+  --code-border: #30363d;
+  --code-header: #1c2128;
+  --code-header-border: #30363d;
+  --code-muted: #8b949e;
+  --code-raised: rgba(255, 255, 255, 0.08);
+
+  --code-inline-bg: rgba(255, 255, 255, 0.06);
+  --code-inline-border: rgba(255, 255, 255, 0.1);
+
+  /* ---------- 次级按钮：半透明白底 + 明确描边 ---------- */
+  --btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --btn-secondary-bg-hover: rgba(255, 255, 255, 0.1);
+  --btn-secondary-border: rgba(255, 255, 255, 0.22);
+  --btn-secondary-border-hover: rgba(255, 255, 255, 0.36);
+
+  --alert-neutral-bg: var(--surface-raised);
+  --alert-neutral-accent: var(--gray-400);
+  --alert-neutral-text: var(--gray-300);
+
+  --alert-info-bg: var(--surface-raised);
+  --alert-info-accent: var(--blue-400);
+  --alert-info-text: var(--gray-200);
+
+  --alert-success-bg: var(--surface-raised);
+  --alert-success-accent: var(--brand-400);
+  --alert-success-text: var(--brand-400);
+
+  --alert-warning-bg: var(--surface-raised);
+  --alert-warning-accent: var(--amber-400);
+  --alert-warning-text: var(--amber-400);
+
+  --alert-danger-bg: var(--surface-raised);
+  --alert-danger-accent: var(--red-400);
+  --alert-danger-text: var(--red-400);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 16px 40px -12px rgba(0, 0, 0, 0.7);
+  --shadow-focus: 0 0 0 3px var(--tint-active);
+
+  --ifm-color-primary: var(--brand-400);
+  --ifm-color-primary-dark: var(--brand-500);
+  --ifm-color-primary-darker: var(--brand-600);
+  --ifm-color-primary-darkest: var(--brand-700);
+  --ifm-color-primary-light: var(--brand-300);
+  --ifm-color-primary-lighter: var(--brand-200);
+  --ifm-color-primary-lightest: var(--brand-100);
+
+  --ifm-background-color: #0d1117;
+  --ifm-background-surface-color: #161b22;
+  --ifm-font-color-base: var(--text-body);
+  --ifm-heading-color: var(--text-strong);
+  --ifm-link-color: var(--brand-400);
+  --ifm-link-hover-color: var(--brand-300);
+  --ifm-border-color: var(--border-default);
+  --ifm-toc-border-color: var(--border-subtle);
+  --ifm-navbar-background-color: var(--surface-page);
+  --ifm-navbar-link-color: var(--text-body);
+  --ifm-menu-color: var(--text-body);
+  --ifm-menu-color-active: var(--brand-400);
+  --ifm-menu-color-background-active: var(--tint-active);
+  --ifm-menu-color-background-hover: var(--tint-hover);
+
+  --ifm-footer-link-color: var(--text-muted);
+  --ifm-footer-title-color: var(--brand-400);
+
+  --ifm-code-background: var(--tint-strong);
+  --ifm-table-head-background: var(--gray-800);
+  --ifm-table-border-color: var(--border-default);
+  --ifm-scrollbar-thumb-background-color: var(--gray-600);
+
+  --docusaurus-highlighted-code-line-bg: var(--tint-active);
+}

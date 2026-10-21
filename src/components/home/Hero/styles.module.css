@@ -1,0 +1,184 @@
+/* 首页首屏：扁平化取向——纯色底 + 静态网格，无光斑、无渐变文字、无入场位移 */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - var(--navbar-height));
+  /* svh 避免移动端地址栏收缩导致的跳动；不支持时回退到上面的 vh */
+  min-height: calc(100svh - var(--navbar-height));
+  padding: var(--space-7) 0;
+  overflow: hidden;
+  background: var(--surface-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* 静态网格：只作背景质感，不参与动画，颜色随主题令牌变化 */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ---------- 布局 ---------- */
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-7);
+  width: 100%;
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+.content {
+  flex: 1;
+  max-width: 620px;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 620px;
+}
+
+/* ---------- 标题 ---------- */
+.title {
+  margin-bottom: var(--space-5);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+}
+
+.titleBrand {
+  color: var(--text-brand);
+}
+
+/* ---------- 导语 ---------- */
+.description {
+  max-width: 44ch;
+  margin-bottom: var(--space-6);
+  font-size: var(--text-xl);
+  line-height: var(--leading-relaxed);
+  color: var(--text-muted);
+}
+
+/* 每个语义句子独立成块，窄屏才能在句内均衡断行，而不是留下孤字 */
+.descLine {
+  display: block;
+  text-wrap: balance;
+}
+
+/* ---------- 按钮组 ---------- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1200px) {
+  .container {
+    gap: var(--space-6);
+  }
+
+  .content {
+    max-width: 560px;
+  }
+
+  /* 列变窄后同步收紧标题上限，避免 9 字标题被迫断成三行 */
+  .title {
+    font-size: clamp(2.25rem, 5.4vw, 3.5rem);
+  }
+
+  .visual {
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 996px) {
+  .hero {
+    min-height: auto;
+    padding: var(--space-6) 0;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: var(--space-6);
+    text-align: center;
+  }
+
+  .content,
+  .visual {
+    max-width: 100%;
+  }
+
+  .visual {
+    justify-content: center;
+  }
+
+  .description {
+    margin-right: auto;
+    margin-left: auto;
+    font-size: var(--text-base);
+  }
+
+  .actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-6) 0 var(--space-7);
+  }
+
+  .container {
+    gap: var(--space-5);
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-5) 0 var(--space-6);
+  }
+
+  .container {
+    gap: var(--space-5);
+  }
+
+  .title {
+    margin-bottom: var(--space-4);
+  }
+
+  .description {
+    margin-bottom: var(--space-5);
+    font-size: var(--text-sm);
+  }
+
+  /* 两个按钮并排等宽，比上下堆两个整宽按钮更紧凑 */
+  .actions {
+    width: 100%;
+  }
+
+  .actions > * {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+  }
+}

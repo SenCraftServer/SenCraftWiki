@@ -1,0 +1,192 @@
+/* 终端窗口：单层描边 + 轻阴影，去掉渐变描边光晕与悬浮缩放 */
+
+.window {
+  /* 终端是插画语义：任何主题都保持深色机身，故在此本地覆盖代码块令牌 */
+  --code-surface: #0b0f14;
+  --code-text: #e6e6e6;
+  --code-border: #2d2d2d;
+  --code-header: #161b22;
+  --code-header-border: #21262d;
+  --code-muted: #8b949e;
+  --code-raised: rgba(255, 255, 255, 0.08);
+
+  width: 100%;
+  max-width: 540px;
+  overflow: hidden;
+  /* 终端始终左对齐：Hero 在窄屏会把容器文字居中，这里必须重置 */
+  text-align: left;
+  background: var(--code-surface);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- 标题栏 ---------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--code-header);
+  border-bottom: 1px solid var(--code-header-border);
+}
+
+.lights {
+  display: flex;
+  gap: 8px;
+}
+
+.lightRed,
+.lightYellow,
+.lightGreen {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* macOS 窗口控件属于插画语义，固定色值，不随主题变化 */
+.lightRed {
+  background: #ff5f56;
+}
+
+.lightYellow {
+  background: #ffbd2e;
+}
+
+.lightGreen {
+  background: #27c93f;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--code-muted);
+}
+
+.placeholder {
+  width: 52px;
+}
+
+/* ---------- 内容 ---------- */
+.body {
+  padding: 1.25rem;
+  font-family: var(--font-mono);
+  /* 13px：输出行更长，比正文小一档才不至于贴到卡片边缘 */
+  font-size: 0.8125rem;
+  line-height: var(--leading-relaxed);
+}
+
+.line {
+  display: flex;
+  margin-bottom: var(--space-2);
+}
+
+.prompt {
+  font-weight: var(--weight-semibold);
+  color: var(--brand-400);
+}
+
+.command {
+  width: 0;
+  overflow: hidden;
+  color: var(--code-text);
+  white-space: nowrap;
+  animation: typing 2s steps(32) 0.8s forwards;
+}
+
+@keyframes typing {
+  to {
+    width: 100%;
+  }
+}
+
+.output {
+  margin-bottom: var(--space-1);
+  opacity: 0;
+  animation: fade-in 0.5s var(--ease-out) forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.time {
+  color: var(--code-muted);
+}
+
+.info {
+  color: var(--blue-400);
+}
+
+.success {
+  color: var(--brand-400);
+}
+
+.text {
+  color: var(--code-text);
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--brand-400);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .lightRed,
+  .lightYellow,
+  .lightGreen {
+    width: 10px;
+    height: 10px;
+  }
+
+  .title {
+    font-size: 0.625rem;
+  }
+
+  .placeholder {
+    width: 40px;
+  }
+
+  .body {
+    padding: 0.875rem;
+    font-size: 0.6875rem;
+    line-height: 1.6;
+  }
+
+  .line {
+    margin-bottom: 0.375rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .command {
+    width: 100%;
+  }
+
+  .output {
+    opacity: 1;
+  }
+
+  .cursor {
+    animation: none;
+  }
+}

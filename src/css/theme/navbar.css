@@ -1,0 +1,231 @@
+/**
+ * SenCraftWiki · 主题层：导航栏
+ *
+ * 扁平化：实色底 + 1px 分隔线，不做毛玻璃与渐变装饰。
+ * 状态反馈只依赖底色变化，不位移、不缩放。
+ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-navbar);
+  display: flex;
+  align-items: center;
+  height: var(--navbar-height);
+  padding: 0 var(--space-5);
+  background: var(--surface-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar__inner {
+  width: 100%;
+  max-width: var(--shell-max);
+  margin: 0 auto;
+}
+
+/* ---------- 品牌 ---------- */
+.navbar__brand {
+  margin-right: var(--space-5);
+}
+
+.navbar__logo {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: var(--space-2);
+}
+
+.navbar__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.navbar__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+}
+
+/* ---------- 链接 ---------- */
+.navbar__link {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-body);
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.navbar__link:hover {
+  color: var(--text-brand);
+  background: var(--tint-hover);
+}
+
+.navbar__link--active {
+  color: var(--text-brand);
+  font-weight: var(--weight-semibold);
+  background: var(--tint-active);
+}
+
+.navbar__link--active:hover {
+  background: var(--tint-active);
+}
+
+/* 桌面端当前栏目改用细下划线：比整块底色更轻，也不与品牌胶囊争视觉 */
+@media (min-width: 997px) {
+  .navbar__items .navbar__link--active {
+    position: relative;
+    font-weight: var(--weight-semibold);
+    color: var(--text-brand);
+    background: transparent;
+  }
+
+  .navbar__items .navbar__link--active::after {
+    position: absolute;
+    right: 6px;
+    bottom: -3px;
+    left: 6px;
+    height: 2px;
+    content: '';
+    background: var(--brand);
+    border-radius: var(--radius-pill);
+  }
+
+  .navbar__items .navbar__link--active:hover {
+    background: var(--tint-hover);
+  }
+}
+
+/* ---------- 下拉菜单 ---------- */
+.navbar__item.dropdown .dropdown__menu {
+  padding: var(--space-1);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar__item.dropdown .dropdown__link {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-body);
+  border-radius: var(--radius-xs);
+  transition: background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.navbar__item.dropdown .dropdown__link:hover,
+.navbar__item.dropdown .dropdown__link--active {
+  color: var(--text-brand);
+  background: var(--tint-hover);
+}
+
+/* ---------- 图标按钮（主题切换 / 搜索） ---------- */
+.navbar .clean-btn {
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+/* 滑块开关自带轨道反馈，不再叠加按钮底色 */
+.navbar .clean-btn:not([role='switch']):hover {
+  color: var(--text-brand);
+  background: var(--tint-hover);
+}
+
+/* 本地搜索插件的变量映射 */
+:root {
+  --search-local-modal-background: var(--surface-raised);
+  --search-local-modal-shadow: var(--shadow-lg);
+  --search-local-modal-width: 560px;
+  --search-local-spacing: var(--space-3);
+  --search-local-input-active-border-color: var(--brand);
+  --search-local-muted-color: var(--text-muted);
+  --search-local-highlight-color: var(--brand-700);
+}
+
+[data-theme='dark'] {
+  --search-local-highlight-color: var(--brand-400);
+}
+
+/*
+ * 快捷键提示（如 Ctrl K）：插件默认色为 #bec3c9，白底对比度仅 1.5:1，
+ * 这里改用语义令牌，深浅主题都可读。
+ */
+.navbar [class*='searchHint'] {
+  color: var(--text-muted);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ---------- 移动端导航抽屉 ---------- */
+.navbar-sidebar {
+  background: var(--surface-page);
+  border-right: 1px solid var(--border-subtle);
+  box-shadow: none;
+}
+
+.navbar-sidebar__brand {
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-page);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: none;
+}
+
+.navbar-sidebar__item {
+  background: var(--surface-page);
+}
+
+.navbar-sidebar__back {
+  width: 100%;
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-brand);
+  border-radius: var(--radius-sm);
+}
+
+.navbar-sidebar__back:hover {
+  background: var(--tint-hover);
+}
+
+.navbar-sidebar .menu__link {
+  color: var(--text-body);
+  border-radius: var(--radius-sm);
+}
+
+.navbar-sidebar .menu__link:hover {
+  color: var(--text-brand);
+  background: var(--tint-hover);
+}
+
+.navbar-sidebar .menu__link--active {
+  color: var(--text-brand);
+  background: var(--tint-active);
+}
+
+.navbar__toggle {
+  margin-right: var(--space-2);
+  color: var(--text-body);
+}
+
+@media (max-width: 996px) {
+  .navbar {
+    padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 var(--space-3);
+  }
+
+  .navbar__title {
+    font-size: var(--text-base);
+  }
+}

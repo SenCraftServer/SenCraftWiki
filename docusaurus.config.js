@@ -12,7 +12,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'SenCraftWiki',
   tagline: 'SenCraft',
-  favicon: 'img/favicon.ico',
+  // 与导航栏同源的樱花图标：原 favicon 是整张字标，缩到 16px 后无法辨认
+  favicon: 'img/brand-mark.png',
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -114,10 +115,11 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
+        // 图标只放樱花图形（从完整字标裁出），文字标题另用 title 渲染，避免字标重复
         title: 'SenCraft',
         logo: {
-          alt: 'SenCraft Logo',
-          src: 'img/favicon.ico',
+          alt: 'SenCraft 森世界',
+          src: 'img/brand-mark.png',
         },
         items: [
           {

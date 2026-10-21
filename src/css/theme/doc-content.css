@@ -1,0 +1,522 @@
+/**
+ * SenCraftWiki · 主题层：文档正文
+ *
+ * 所有颜色走语义令牌，深色模式无需重复选择器。
+ */
+
+/* ---------- 容器 ---------- */
+/* 不做入场位移：路由切换时重放动画会与滚动位置恢复相互干扰 */
+.theme-doc-markdown {
+  max-width: var(--content-max);
+}
+
+/* ---------- 标题 ---------- */
+.markdown h1 {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+}
+
+.markdown h2 {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.markdown h3 {
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-strong);
+}
+
+.markdown h4 {
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--text-strong);
+}
+
+.markdown h5,
+.markdown h6 {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+}
+
+/* ---------- 段落与列表 ---------- */
+.markdown p {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-body);
+}
+
+.markdown ul,
+.markdown ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-5);
+}
+
+.markdown li {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-body);
+}
+
+.markdown ul li::marker {
+  color: var(--brand);
+}
+
+.markdown ol li::marker {
+  font-weight: var(--weight-semibold);
+  color: var(--brand);
+}
+
+/* ---------- 链接 ---------- */
+.markdown a {
+  font-weight: var(--weight-medium);
+  color: var(--ifm-link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--tint-border);
+  transition: color var(--duration-fast) var(--ease-out),
+    text-decoration-color var(--duration-fast) var(--ease-out);
+}
+
+.markdown a:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration-color: currentColor;
+}
+
+/* 行内代码、表格链接、标题锚点不画下划线 */
+.markdown code a,
+.markdown table a,
+.markdown a.hash-link,
+.markdown .hash-link {
+  text-decoration: none;
+}
+
+/* ---------- 代码 ---------- */
+.markdown code {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-relaxed);
+  padding: 0.15em 0.4em;
+  border: 1px solid var(--code-inline-border);
+  border-radius: var(--radius-xs);
+  color: var(--text-code);
+  background: var(--code-inline-bg);
+  letter-spacing: 0.01em;
+}
+
+.markdown pre {
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  background: var(--code-surface);
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-md);
+  letter-spacing: 0.01em;
+}
+
+/*
+ * Prism 主题会在容器上写入内联的 --prism-background-color，
+ * 并在 <pre> 上内联背景与字色，这里统一改由 --code-* 令牌决定：
+ * 浅色主题即浅底深字，深色主题即深底浅字。
+ */
+.theme-code-block {
+  /* 容器带着内联的 --prism-background-color，需 !important 才能统一到令牌 */
+  --prism-background-color: var(--code-surface) !important;
+  background-color: var(--code-surface);
+}
+
+/* 有标题栏时由标题栏提供上边框，避免与 <pre> 的边框叠成 2px */
+[class*='codeBlockTitle'] {
+  color: var(--code-muted);
+  background-color: var(--code-header);
+  border-bottom: 1px solid var(--code-header-border);
+}
+
+.theme-code-block:has([class*='codeBlockTitle']) pre {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.markdown pre[class*='codeBlock'] {
+  color: var(--code-text) !important;
+  background-color: var(--code-surface) !important;
+}
+
+.markdown pre code {
+  padding: 0;
+  font-weight: var(--weight-medium);
+  color: var(--code-text);
+  background: transparent;
+  border: none;
+}
+
+.prism-code {
+  background: var(--code-surface);
+}
+
+.docusaurus-highlight-code-line {
+  display: block;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+  background: var(--docusaurus-highlighted-code-line-bg);
+  border-left: 3px solid var(--brand);
+}
+
+/* 复制按钮跟随代码块令牌，深浅主题下都能落在正确底色上 */
+.theme-code-block-copy-button {
+  color: var(--code-muted);
+  background: transparent;
+  border: 1px solid var(--code-border);
+  border-radius: var(--radius-xs);
+  transition: color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.theme-code-block-copy-button:hover {
+  color: var(--code-text);
+  border-color: var(--gray-600);
+  background: var(--code-raised);
+}
+
+/* ---------- 表格 ----------
+   扁平表格：外框 + 行分隔线与淡表头，去掉全网格线与表头重底色。 */
+.markdown table {
+  width: 100%;
+  margin-bottom: var(--space-5);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.markdown thead {
+  background: var(--surface-sunken);
+}
+
+.markdown thead th {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-muted);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.markdown tbody tr {
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.markdown tbody tr:hover {
+  background: var(--tint-subtle);
+}
+
+.markdown tbody td {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-body);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.markdown tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- 引用 ---------- */
+.markdown blockquote {
+  margin: var(--space-5) 0;
+  padding: var(--space-3) var(--space-4);
+  font-style: normal;
+  color: var(--text-muted);
+  background: var(--surface-sunken);
+  border-left: 3px solid var(--border-strong);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.markdown blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- 提示框（颜色全部走 --alert-* 语义令牌） ---------- */
+.theme-admonition,
+.markdown .admonition {
+  margin: var(--space-5) 0;
+  border-left: 3px solid var(--alert-neutral-accent);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+}
+
+.theme-admonition .admonition-heading,
+.theme-admonition h5 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+}
+
+.alert--info {
+  background: var(--alert-info-bg);
+  border-left-color: var(--alert-info-accent);
+}
+
+.alert--info .admonition-heading,
+.alert--info .admonition-heading h5 {
+  color: var(--alert-info-text);
+}
+
+.alert--success,
+.alert--tip {
+  background: var(--alert-success-bg);
+  border-left-color: var(--alert-success-accent);
+}
+
+.alert--success .admonition-heading,
+.alert--success .admonition-heading h5,
+.alert--tip .admonition-heading,
+.alert--tip .admonition-heading h5 {
+  color: var(--alert-success-text);
+}
+
+.alert--warning,
+.alert--caution {
+  background: var(--alert-warning-bg);
+  border-left-color: var(--alert-warning-accent);
+}
+
+.alert--warning .admonition-heading,
+.alert--warning .admonition-heading h5,
+.alert--caution .admonition-heading,
+.alert--caution .admonition-heading h5 {
+  color: var(--alert-warning-text);
+}
+
+.alert--danger {
+  background: var(--alert-danger-bg);
+  border-left-color: var(--alert-danger-accent);
+}
+
+.alert--danger .admonition-heading,
+.alert--danger .admonition-heading h5 {
+  color: var(--alert-danger-text);
+}
+
+.alert--secondary,
+.alert--note {
+  background: var(--alert-neutral-bg);
+  border-left-color: var(--alert-neutral-accent);
+}
+
+.alert--secondary .admonition-heading,
+.alert--secondary .admonition-heading h5,
+.alert--note .admonition-heading,
+.alert--note .admonition-heading h5 {
+  color: var(--alert-neutral-text);
+}
+
+/* ---------- 标签页 ---------- */
+.tabs {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.tabs__item {
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--weight-medium);
+  color: var(--text-muted);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.tabs__item:hover {
+  color: var(--text-brand);
+  background: var(--tint-hover);
+}
+
+.tabs__item--active {
+  color: var(--text-brand);
+  border-bottom-color: var(--brand);
+}
+
+/* ---------- 图片与分隔线 ---------- */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-5) 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.markdown figcaption {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.markdown hr {
+  height: 1px;
+  margin: var(--space-6) 0;
+  border: none;
+  background: var(--border-subtle);
+}
+
+/* ---------- 徽章 ---------- */
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  border-radius: var(--radius-pill);
+  background: var(--tint-strong);
+  color: var(--text-brand);
+  border: 1px solid var(--tint-border);
+}
+
+.badge--primary {
+  color: var(--text-on-brand);
+  background: var(--brand-solid);
+  border-color: transparent;
+}
+
+.badge--secondary {
+  color: var(--text-muted);
+  background: var(--surface-sunken);
+  border-color: var(--border-default);
+}
+
+/* ---------- 折行与滚动 ---------- */
+.markdown table,
+.markdown pre,
+.markdown code {
+  word-break: normal;
+}
+
+.markdown pre {
+  overflow-wrap: normal;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1200px) {
+  .theme-doc-markdown {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 996px) {
+  .markdown h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .markdown h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .markdown table {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 768px) {
+  .markdown h1 {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+  }
+
+  .markdown h2 {
+    margin-top: var(--space-6);
+    font-size: var(--text-xl);
+  }
+
+  .markdown h3 {
+    font-size: var(--text-lg);
+  }
+
+  .markdown pre {
+    padding: var(--space-4);
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .markdown h1 {
+    font-size: var(--text-2xl);
+  }
+
+  .markdown h2 {
+    margin-top: var(--space-5);
+    font-size: var(--text-lg);
+  }
+
+  .markdown h3 {
+    font-size: var(--text-base);
+  }
+
+  .markdown p,
+  .markdown li {
+    font-size: var(--text-sm);
+  }
+
+  .markdown table {
+    font-size: var(--text-xs);
+  }
+
+  .markdown thead th,
+  .markdown tbody td {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .markdown pre {
+    padding: var(--space-3);
+    font-size: var(--text-xs);
+    border-radius: var(--radius-sm);
+  }
+
+  .markdown code {
+    font-size: 0.85em;
+    padding: 0.15em 0.3em;
+  }
+
+  .markdown blockquote {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+  }
+}

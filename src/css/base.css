@@ -1,0 +1,179 @@
+/**
+ * SenCraftWiki · 基础层
+ *
+ * 元素级排版与全局交互基线。不做任何 Docusaurus 结构选择器覆写。
+ */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--navbar-height) + 1rem);
+  background-color: var(--surface-page);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-body);
+  background-color: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--text-strong);
+  letter-spacing: var(--tracking-tight);
+}
+
+h1 {
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+}
+
+h2 {
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-mono);
+}
+
+a {
+  color: var(--ifm-link-color);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--ifm-link-hover-color);
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background: var(--border-subtle);
+}
+
+/* ---------- 选中文本 ---------- */
+::selection {
+  background: var(--tint-selection);
+  color: var(--text-strong);
+}
+
+/* ---------- 滚动条 ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-scrollbar-thumb-background-color) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-scrollbar-thumb-background-color);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+/* ---------- 焦点可见性 ---------- */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ---------- 无障碍：跳过导航 ---------- */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: calc(var(--z-overlay) + 10);
+  padding: var(--space-2) var(--space-4);
+  font-weight: var(--weight-semibold);
+  color: var(--text-on-brand);
+  background: var(--brand-solid);
+  border-radius: var(--radius-sm);
+  transition: top var(--duration-fast) var(--ease-out);
+}
+
+.skip-to-content:focus {
+  top: var(--space-3);
+  color: var(--text-on-brand);
+}
+
+/* ---------- 打印 ---------- */
+@media print {
+  .navbar,
+  .theme-doc-sidebar-container,
+  .theme-doc-toc-desktop,
+  .theme-doc-toc-mobile,
+  .footer,
+  .pagination-nav,
+  .mobile-docs-fab {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .theme-doc-markdown {
+    max-width: 100% !important;
+  }
+
+  .theme-doc-markdown a[href]::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: #555;
+  }
+
+  .theme-doc-markdown pre,
+  .theme-doc-markdown table,
+  .theme-doc-markdown img {
+    break-inside: avoid;
+  }
+}
+
+/* ---------- 降低动效偏好 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
