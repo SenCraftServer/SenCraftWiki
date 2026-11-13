@@ -1,60 +1,92 @@
 ---
 sidebar_position: 0
-title: "主页"
 ---
 
-# 🧭 SenCraft 社区指南
+# SenCraft官方WIKI
 
-学习 SenCraft 的各种建筑工具，包括 [**WorldEdit**](build-new/we/start)  ，[**Arceon**](build-new/arceon/home) ，[**VoxelSniper**](build-new/vs/start) 等
+SenCraft是一款由服主 **sensen1234** 创建的公益Minecraft创造服
 
-  - 为每人提供4块512大 [**地皮**](plots/Start)
-  - 无门槛生成 [**属于你的领域**](worlds/realms)
-  - [快速调音](utility/blocktuner)功能（*红石音乐狂喜*)
-  - 方便的[上传建筑](join/import-export)
-  - 支持 [**Java**](https://zh.minecraft.wiki/w/Java%E7%89%88) 和 [**基岩**](https://zh.minecraft.wiki/w/%E5%9F%BA%E5%B2%A9%E7%89%88) 版，无论你用什么设备，都能一起游玩
-  - 云端存档、定期备份，安全可靠
+自**2022年2月1日**开服以来，服务器迎来了两个版本的大更新，注册人数达到**23000**
+b站相关视频总播放数达到**50w+**
 
-  ![](/cover.png)
+- 我们承诺: **服务器永远不会更换周目，永远不会成为商业服**
 
-## 服务器地址
+## 相关信息
 
-```bash [Java 版]
+**IP:** `mc.sencraft.top`
+
+**官网：** `https://www.sencraft.top`
+
+**B站官号：** `SenCraft森世界`
+
+**QQ群：** `240722519`
+
+## 加入服务器
+
+服务器版本为**1.7-26.3** 核心版本为 **26.2**
+
+您可以使用这个版本区间内的任何一款客户端加入服务器，推荐使用**1.21.8**的客户端进入
+
+JAVA版IP:
+```
 mc.sencraft.top
 ```
-
-```bash [基岩版]
-mcbe.sencraft.top:35032
+BE版IP：
 ```
+mcbe.sencraft.top
+端口:35033
+```
+  ![](/cover.png)
+### 官方客户端
 
-建议使用 Java 版，至少 1.19.4 或更高进入
+我们推荐（不强制）您使用官方客户端，官方客户端对服务器拥有最好的兼容性
 
-## ⚒ 工欲善其事，必先利其器
+若您需使用官方客户端，请先下载**JAVA21**并安装
 
-### Fast Async World Edit
+然后访问👉**https://www.123684.com/s/Yjx9jv-xRZXv**  下载官方客户端，并解压
 
-FAWE 是创世神的一个超集，大幅优化了性能，而且[**上手简单**](build-new/we/start)
+## 服务器相关功能教程
 
-### Arceon
+服务器拥有大量的功能，如
+- 重新加载附近的区块、查看手上的方块英文ID、渐变色色轮、方块更新开关
+自定义盔甲架、自定义旗帜、自定义花卉、更改生物群系
+关闭飞行惯性、精准半砖破坏、快捷切换铁活板门状态
+无限夜视、自定义个人时间、穿墙模式、更改釉块方向
+关闭方块交互、快捷放置告示牌、更好的植物放置、特殊方块获取、家具
+服务器版Replay、3D选区（即将上线）
+- 快速调音功能
+- and more....
 
-包括模板，文字生成和河流等[**一些好用的工具**](build-new/arceon/home)
+## 建筑插件教程
 
-### Voxel Sniper
+为了建筑师的极致体验，我们针对服务器进行了大量优化，并且上线了诸多建筑插件，包括但**不限于**：
 
-使用箭和火药工具来编辑方块，雕刻利器，包含[**大量不同笔刷**](build-new/vs/start)
+- [WorldEdit](build-new/we/start)
+- [Arceon](build-new/arceon/home)
+- `GoBrush`
+- `GoPaint`
+- `FAVS`
+- `Axiom`
+- `贝塞尔曲线（Twkbeziertemplate、Curvebuilding）`
+- `64视距`
+- `镜像建筑`
+- `树库、笔刷库 `
 
-### 不怕建筑被熊
+并且拥有着完善的备份系统，以确保您的建筑安全
+:::tip[备份策略]
+服务器目前的备份策略为：
+- 一天两次机房内全盘快照（使用12T企业级氦气盘存储）
+- 一天一次存档备份（5地5中心）
+- 一周一次全端备份
 
-你可以自行管理你的[**地皮**](plots/Start)或者[**领域**](worlds/realms)，谁能一起建筑、由你决定
+如果您还是对您的存档安全有所顾虑  
+您还可以进行如下操作：
+- 下载Schem/地皮mca文件
+- 自由下载私人世界存档
+  
+总备份盘容量超过**1PB**（是的，你没听错）
 
-### 还能[**申请优秀建筑**](join/eb)
-
-SenCraft 分两个优秀建筑评级，**β** 为在服务器中脱颖而出的作品，其中最惊艳的将评为 **α**
-
-### 导入和导出你的建筑
-
-本地存档的建筑可以[自助上传](join/import-export#导入schem)，也可以[下载你的作品](join/import-export#导出schem)
-
-## 🎪 优秀建筑
+:::
 
 ## 💰 捐助
 
